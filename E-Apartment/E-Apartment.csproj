@@ -76,10 +76,22 @@
     <Compile Include="CustomerSignUp.Designer.cs">
       <DependentUpon>CustomerSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageApartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageApartments.Designer.cs">
+      <DependentUpon>ManageApartments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageApartments.resx">
+      <DependentUpon>ManageApartments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

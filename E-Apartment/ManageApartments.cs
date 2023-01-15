@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace E_Apartment
 {
-    public partial class AdminDashboard : Form
+    public partial class ManageApartments : Form
     {
-        public AdminDashboard()
+        public ManageApartments()
         {
             InitializeComponent();
         }
-
-       
     }
 }

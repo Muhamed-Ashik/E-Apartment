@@ -82,6 +82,24 @@
     <Compile Include="ManageApartments.Designer.cs">
       <DependentUpon>ManageApartments.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCustomers.Designer.cs">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageLease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageLease.Designer.cs">
+      <DependentUpon>ManageLease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageReports.Designer.cs">
+      <DependentUpon>ManageReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminDashboard.resx">
@@ -92,6 +110,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageApartments.resx">
       <DependentUpon>ManageApartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageCustomers.resx">
+      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageLease.resx">
+      <DependentUpon>ManageLease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageReports.resx">
+      <DependentUpon>ManageReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

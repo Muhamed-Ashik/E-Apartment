@@ -77,12 +77,13 @@
             // 
             // btnAdminLogout
             // 
-            this.btnAdminLogout.Location = new System.Drawing.Point(885, 59);
+            this.btnAdminLogout.Location = new System.Drawing.Point(1070, 12);
             this.btnAdminLogout.Name = "btnAdminLogout";
             this.btnAdminLogout.Size = new System.Drawing.Size(139, 41);
             this.btnAdminLogout.TabIndex = 9;
             this.btnAdminLogout.Text = "Logout";
             this.btnAdminLogout.UseVisualStyleBackColor = true;
+            this.btnAdminLogout.Click += new System.EventHandler(this.btnAdminLogout_Click);
             // 
             // btnAdminGenerateReports
             // 
@@ -164,6 +165,7 @@
             this.btnAdminManageApartments.TabIndex = 0;
             this.btnAdminManageApartments.Text = "Manage Apartments";
             this.btnAdminManageApartments.UseVisualStyleBackColor = true;
+            this.btnAdminManageApartments.Click += new System.EventHandler(this.btnAdminManageApartments_Click);
             // 
             // panel2
             // 

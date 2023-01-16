@@ -30,12 +30,15 @@ namespace E_Apartment
 
 
             // checking the admin login page text fields are empty
-            if (txtAdminUsername.Text == "" || txtAdminPassword.Text == "") {
+            if (txtAdminUsername.Text == "" || txtAdminPassword.Text == "")
+            {
 
                 // show an error message
                 MessageBox.Show("Please Enter the Correct Username and Password!");
 
-            } else { // redirect to the admin dashboard
+            }
+            else
+            { // redirect to the admin dashboard
 
                 // database connection
                 SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-UU5O8KP;Initial Catalog=_E-Apartment;Integrated Security=True");
@@ -61,7 +64,7 @@ namespace E_Apartment
                     var data = dataTable.Rows[i].ItemArray;
 
                     // accessing the data in the data table row 1 and converting it to a string and storing in the Name Variable????
-                    Name = data[1].ToString(); 
+                    Name = data[1].ToString();
                     // accessing the data in the data table row 2 and converting in to a string and stroing in the Username Variable ???? 
                     Username = data[2].ToString();
                     // accessing the data in the data table row 3 and converting in to a string and stroing in the Password Variable ???? 
@@ -71,7 +74,7 @@ namespace E_Apartment
                 } // End of the for loop
 
                 // checking the user entered username and password are matching with the database fetched username and password
-                if(txtAdminUsername.Text == Username && txtAdminPassword.Text == Password)
+                if (txtAdminUsername.Text == Username && txtAdminPassword.Text == Password)
                 {// if the both are matched
 
                     MessageBox.Show("Welcome " + Name); // show a message
@@ -85,7 +88,8 @@ namespace E_Apartment
                     // showing the admin dashboard
                     adminDashboard.Show();
 
-                } else
+                }
+                else
                 { // if both are not matched
 
                     // show this message
@@ -93,21 +97,22 @@ namespace E_Apartment
 
                 } // End of the username and password match check if condition
 
-                 
+
 
             } // End of the fields empty check if condition
-            
+
 
         } // End of the method btnAdminLoginClick Event 
 
         private void btnAdminTextClear_Click(object sender, EventArgs e)
         { // Method, executed when clear button is clicked
 
-            
+
             txtAdminUsername.Clear(); // clear the text of admin username field
             txtAdminPassword.Clear(); // clear the text of admin password field
 
         } // ENd of the Admin Text Clear button
+
 
 
     } // End of the class AdminLogin

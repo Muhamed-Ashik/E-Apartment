@@ -20,6 +20,35 @@ namespace E_Apartment
 
         }
 
-       
+        private void btnAdminLogout_Click(object sender, EventArgs e)
+        { // Execute when the logout button clicked
+
+            // Object or instance of the admin login page
+            AdminLogin adminLogin = new AdminLogin();
+
+            // message to show once logout
+            MessageBox.Show("Thanks for Visiting! Logouted!");
+
+            // hide the current open dashboard
+            this.Hide();
+
+            // show the adminLogin page
+            adminLogin.Show();
+
+        } // End of the Admin Logout Button
+
+        private void btnAdminManageApartments_Click(object sender, EventArgs e)
+        { // Method, Execute when the Manage Apartment button clicked
+
+            // Object or instance of the ManageAparments page
+            ManageApartments manageApartments = new ManageApartments();
+
+            this.Hide();  // hide the current open dashboard
+
+            manageApartments.Show();// show the ManageAparments page
+
+
+        } // End of the Manage Apartment Button
+
     } // End of the AdminDashboard
 } // End of E_Apartment namespace

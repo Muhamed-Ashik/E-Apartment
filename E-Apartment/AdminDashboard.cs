@@ -14,9 +14,12 @@ namespace E_Apartment
     {
         public AdminDashboard()
         {
+
             InitializeComponent();
+ 
+
         }
 
        
-    }
-}
+    } // End of the AdminDashboard
+} // End of E_Apartment namespace

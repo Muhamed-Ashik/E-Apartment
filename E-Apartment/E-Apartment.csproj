@@ -76,6 +76,7 @@
     <Compile Include="CustomerSignUp.Designer.cs">
       <DependentUpon>CustomerSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="ManageApartments.cs">
       <SubType>Form</SubType>
     </Compile>

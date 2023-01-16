@@ -94,6 +94,7 @@
             this.btnAdminLogin.TabIndex = 5;
             this.btnAdminLogin.Text = "Login";
             this.btnAdminLogin.UseVisualStyleBackColor = true;
+            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
             // btnAdminTextClear
             // 
@@ -104,6 +105,7 @@
             this.btnAdminTextClear.TabIndex = 6;
             this.btnAdminTextClear.Text = "Clear";
             this.btnAdminTextClear.UseVisualStyleBackColor = true;
+            this.btnAdminTextClear.Click += new System.EventHandler(this.btnAdminTextClear_Click);
             // 
             // AdminLogin
             // 

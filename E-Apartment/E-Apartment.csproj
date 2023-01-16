@@ -108,6 +108,15 @@
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDashboard.resx">
+      <DependentUpon>CustomerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerLogin.resx">
+      <DependentUpon>CustomerLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerSignUp.resx">
+      <DependentUpon>CustomerSignUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageApartments.resx">
       <DependentUpon>ManageApartments.cs</DependentUpon>
     </EmbeddedResource>

@@ -48,6 +48,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTotalParkingSlot = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.dgwApartmentList = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtApartmentSearch = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtApartmentLocation = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbApartmentStatus = new System.Windows.Forms.ComboBox();
+            this.btnApartmentSearch = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwApartmentList)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -62,7 +73,7 @@
             // 
             // btnAdminApartmentInsert
             // 
-            this.btnAdminApartmentInsert.Location = new System.Drawing.Point(782, 573);
+            this.btnAdminApartmentInsert.Location = new System.Drawing.Point(804, 172);
             this.btnAdminApartmentInsert.Name = "btnAdminApartmentInsert";
             this.btnAdminApartmentInsert.Size = new System.Drawing.Size(75, 23);
             this.btnAdminApartmentInsert.TabIndex = 1;
@@ -72,25 +83,27 @@
             // 
             // btnAdminApartmentUpdate
             // 
-            this.btnAdminApartmentUpdate.Location = new System.Drawing.Point(886, 573);
+            this.btnAdminApartmentUpdate.Location = new System.Drawing.Point(908, 172);
             this.btnAdminApartmentUpdate.Name = "btnAdminApartmentUpdate";
             this.btnAdminApartmentUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnAdminApartmentUpdate.TabIndex = 2;
             this.btnAdminApartmentUpdate.Text = "Update";
             this.btnAdminApartmentUpdate.UseVisualStyleBackColor = true;
+            this.btnAdminApartmentUpdate.Click += new System.EventHandler(this.btnAdminApartmentUpdate_Click);
             // 
             // btnAdminApartmentDelete
             // 
-            this.btnAdminApartmentDelete.Location = new System.Drawing.Point(978, 573);
+            this.btnAdminApartmentDelete.Location = new System.Drawing.Point(1000, 172);
             this.btnAdminApartmentDelete.Name = "btnAdminApartmentDelete";
             this.btnAdminApartmentDelete.Size = new System.Drawing.Size(75, 23);
             this.btnAdminApartmentDelete.TabIndex = 3;
             this.btnAdminApartmentDelete.Text = "Delete";
             this.btnAdminApartmentDelete.UseVisualStyleBackColor = true;
+            this.btnAdminApartmentDelete.Click += new System.EventHandler(this.btnAdminApartmentDelete_Click);
             // 
             // btnApartmentTextClear
             // 
-            this.btnApartmentTextClear.Location = new System.Drawing.Point(1093, 573);
+            this.btnApartmentTextClear.Location = new System.Drawing.Point(1115, 172);
             this.btnApartmentTextClear.Name = "btnApartmentTextClear";
             this.btnApartmentTextClear.Size = new System.Drawing.Size(114, 23);
             this.btnApartmentTextClear.TabIndex = 5;
@@ -121,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(400, 123);
+            this.label2.Location = new System.Drawing.Point(448, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 8;
@@ -129,7 +142,7 @@
             // 
             // txtBuildingNumber
             // 
-            this.txtBuildingNumber.Location = new System.Drawing.Point(499, 120);
+            this.txtBuildingNumber.Location = new System.Drawing.Point(547, 80);
             this.txtBuildingNumber.Multiline = true;
             this.txtBuildingNumber.Name = "txtBuildingNumber";
             this.txtBuildingNumber.Size = new System.Drawing.Size(205, 26);
@@ -137,7 +150,7 @@
             // 
             // txtApartmentNumber
             // 
-            this.txtApartmentNumber.Location = new System.Drawing.Point(946, 120);
+            this.txtApartmentNumber.Location = new System.Drawing.Point(129, 133);
             this.txtApartmentNumber.Multiline = true;
             this.txtApartmentNumber.Name = "txtApartmentNumber";
             this.txtApartmentNumber.Size = new System.Drawing.Size(205, 26);
@@ -146,7 +159,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(836, 123);
+            this.label3.Location = new System.Drawing.Point(19, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 10;
@@ -155,7 +168,7 @@
             // cbxClass1
             // 
             this.cbxClass1.AutoSize = true;
-            this.cbxClass1.Location = new System.Drawing.Point(461, 181);
+            this.cbxClass1.Location = new System.Drawing.Point(86, 188);
             this.cbxClass1.Name = "cbxClass1";
             this.cbxClass1.Size = new System.Drawing.Size(60, 17);
             this.cbxClass1.TabIndex = 12;
@@ -165,7 +178,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(403, 181);
+            this.label4.Location = new System.Drawing.Point(28, 188);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 13;
@@ -174,7 +187,7 @@
             // cbxClass2
             // 
             this.cbxClass2.AutoSize = true;
-            this.cbxClass2.Location = new System.Drawing.Point(527, 181);
+            this.cbxClass2.Location = new System.Drawing.Point(141, 188);
             this.cbxClass2.Name = "cbxClass2";
             this.cbxClass2.Size = new System.Drawing.Size(60, 17);
             this.cbxClass2.TabIndex = 14;
@@ -184,7 +197,7 @@
             // cbxClass3
             // 
             this.cbxClass3.AutoSize = true;
-            this.cbxClass3.Location = new System.Drawing.Point(593, 181);
+            this.cbxClass3.Location = new System.Drawing.Point(207, 188);
             this.cbxClass3.Name = "cbxClass3";
             this.cbxClass3.Size = new System.Drawing.Size(60, 17);
             this.cbxClass3.TabIndex = 15;
@@ -194,7 +207,7 @@
             // cbxSuite
             // 
             this.cbxSuite.AutoSize = true;
-            this.cbxSuite.Location = new System.Drawing.Point(659, 181);
+            this.cbxSuite.Location = new System.Drawing.Point(273, 188);
             this.cbxSuite.Name = "cbxSuite";
             this.cbxSuite.Size = new System.Drawing.Size(50, 17);
             this.cbxSuite.TabIndex = 16;
@@ -203,7 +216,7 @@
             // 
             // txtApartmentDescription
             // 
-            this.txtApartmentDescription.Location = new System.Drawing.Point(517, 235);
+            this.txtApartmentDescription.Location = new System.Drawing.Point(129, 255);
             this.txtApartmentDescription.Multiline = true;
             this.txtApartmentDescription.Name = "txtApartmentDescription";
             this.txtApartmentDescription.Size = new System.Drawing.Size(651, 118);
@@ -212,7 +225,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(394, 275);
+            this.label5.Location = new System.Drawing.Point(6, 295);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 13);
             this.label5.TabIndex = 17;
@@ -220,7 +233,7 @@
             // 
             // txtTotalParkingSlot
             // 
-            this.txtTotalParkingSlot.Location = new System.Drawing.Point(946, 178);
+            this.txtTotalParkingSlot.Location = new System.Drawing.Point(560, 185);
             this.txtTotalParkingSlot.Multiline = true;
             this.txtTotalParkingSlot.Name = "txtTotalParkingSlot";
             this.txtTotalParkingSlot.Size = new System.Drawing.Size(205, 26);
@@ -229,17 +242,119 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(836, 181);
+            this.label6.Location = new System.Drawing.Point(450, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 19;
             this.label6.Text = "Total Parking Slot : ";
             // 
+            // dgwApartmentList
+            // 
+            this.dgwApartmentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwApartmentList.Location = new System.Drawing.Point(54, 450);
+            this.dgwApartmentList.Name = "dgwApartmentList";
+            this.dgwApartmentList.Size = new System.Drawing.Size(1158, 175);
+            this.dgwApartmentList.TabIndex = 21;
+            this.dgwApartmentList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwApartmentList_CellDoubleClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(544, 420);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(155, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Apartment / Building Number :  ";
+            // 
+            // txtApartmentSearch
+            // 
+            this.txtApartmentSearch.Location = new System.Drawing.Point(718, 410);
+            this.txtApartmentSearch.Multiline = true;
+            this.txtApartmentSearch.Name = "txtApartmentSearch";
+            this.txtApartmentSearch.Size = new System.Drawing.Size(342, 34);
+            this.txtApartmentSearch.TabIndex = 23;
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(129, 80);
+            this.txtID.Multiline = true;
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(205, 26);
+            this.txtID.TabIndex = 25;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 83);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Record ID : ";
+            // 
+            // txtApartmentLocation
+            // 
+            this.txtApartmentLocation.Location = new System.Drawing.Point(560, 133);
+            this.txtApartmentLocation.Multiline = true;
+            this.txtApartmentLocation.Name = "txtApartmentLocation";
+            this.txtApartmentLocation.Size = new System.Drawing.Size(205, 26);
+            this.txtApartmentLocation.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(450, 136);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Location: ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(31, 231);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Status : ";
+            // 
+            // cmbApartmentStatus
+            // 
+            this.cmbApartmentStatus.FormattingEnabled = true;
+            this.cmbApartmentStatus.Items.AddRange(new object[] {
+            "Available",
+            "Unavailable",
+            "Occupied"});
+            this.cmbApartmentStatus.Location = new System.Drawing.Point(129, 228);
+            this.cmbApartmentStatus.Name = "cmbApartmentStatus";
+            this.cmbApartmentStatus.Size = new System.Drawing.Size(121, 21);
+            this.cmbApartmentStatus.TabIndex = 29;
+            // 
+            // btnApartmentSearch
+            // 
+            this.btnApartmentSearch.Location = new System.Drawing.Point(1073, 410);
+            this.btnApartmentSearch.Name = "btnApartmentSearch";
+            this.btnApartmentSearch.Size = new System.Drawing.Size(116, 23);
+            this.btnApartmentSearch.TabIndex = 30;
+            this.btnApartmentSearch.Text = "Search";
+            this.btnApartmentSearch.UseVisualStyleBackColor = true;
+            this.btnApartmentSearch.Click += new System.EventHandler(this.btnApartmentSearch_Click);
+            // 
             // ManageApartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 632);
+            this.ClientSize = new System.Drawing.Size(1245, 637);
+            this.Controls.Add(this.btnApartmentSearch);
+            this.Controls.Add(this.cmbApartmentStatus);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtApartmentLocation);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtApartmentSearch);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dgwApartmentList);
             this.Controls.Add(this.txtTotalParkingSlot);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtApartmentDescription);
@@ -263,7 +378,8 @@
             this.MaximizeBox = false;
             this.Name = "ManageApartments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Apartments";
+            this.Text = "Manage Apartments ";
+            ((System.ComponentModel.ISupportInitialize)(this.dgwApartmentList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +407,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtTotalParkingSlot;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dgwApartmentList;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtApartmentSearch;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtApartmentLocation;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbApartmentStatus;
+        private System.Windows.Forms.Button btnApartmentSearch;
     }
 }

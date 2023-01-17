@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace E_Apartment
 {
@@ -19,9 +20,10 @@ namespace E_Apartment
         {
             InitializeComponent();
 
-        }
+            // Method envoked, display the apartment list to the gridview when the application executed
+            LoadDataToGridView(); 
 
-        
+        }
 
     
         private void btnManageApartmentsToDashboard_Click(object sender, EventArgs e)
@@ -30,11 +32,9 @@ namespace E_Apartment
             // Object or Instance of the Admin Dashboard
             AdminDashboard adminDashboard = new AdminDashboard();
 
-            // Hide the Current open window
-            this.Hide();
-
-            // Show the dashboard
-            adminDashboard.Show();
+            this.Hide();  // Hide the Current open window
+            
+            adminDashboard.Show(); // Show the dashboard
 
         } // End of the Dashboard Button
 
@@ -47,12 +47,10 @@ namespace E_Apartment
 
             // message to show once logout
             MessageBox.Show("Thanks for Visiting! Logouted!");
+            
+            this.Hide(); // hide the current open window
 
-            // hide the current open window
-            this.Hide();
-
-            // show the adminLogin page
-            adminLogin.Show();
+            adminLogin.Show(); // show the adminLogin page
 
 
         } // End of the Admin Logout button
@@ -65,6 +63,8 @@ namespace E_Apartment
             txtApartmentNumber.Clear();
             txtTotalParkingSlot.Clear();
             txtApartmentDescription.Clear();
+            txtApartmentLocation.Clear();
+            cmbApartmentStatus.SelectedItem = String.Empty;
             cbxClass1.Checked = false;
             cbxClass2.Checked = false;
             cbxClass3.Checked = false;
@@ -76,8 +76,8 @@ namespace E_Apartment
         { // Method, execute when insert button clicked
 
             // check the fields are empty
-            if(txtBuildingNumber.Text == "" || txtApartmentNumber.Text == "" || txtTotalParkingSlot.Text == "" ||
-               txtApartmentDescription.Text == "" || cbxClass1.Checked == false && cbxClass2.Checked == false &&
+            if (txtBuildingNumber.Text == "" || txtApartmentNumber.Text == "" || txtTotalParkingSlot.Text == "" ||
+               txtApartmentDescription.Text == "" || cmbApartmentStatus.Text == "" || txtApartmentLocation.Text == "" || cbxClass1.Checked == false && cbxClass2.Checked == false &&
                cbxClass3.Checked == false && cbxSuite.Checked == false)
             {
                 // if the fields empty, then show the message
@@ -111,10 +111,125 @@ namespace E_Apartment
                     MessageBox.Show("Record Not Inserted");
                 }
 
+                LoadDataToGridView();
+                ClearAllText();
+
 
             } // End of the fields empty check if condition
 
         } // End of the Insert Button
+
+
+        public void LoadDataToGridView()
+        {
+
+            ManageApartmentsOOP manageApartmentsOOP = new ManageApartmentsOOP();
+            var data = manageApartmentsOOP.GetApartmentList();
+            dgwApartmentList.DataSource = data;
+
+        } // End of the LoadDataToGridView method
+
+        private void dgwApartmentList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            txtID.Text = dgwApartmentList.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtApartmentNumber.Text = dgwApartmentList.Rows[e.RowIndex].Cells[1].Value.ToString();
+            cbxClass1.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[2].Value.ToString());
+            cbxClass2.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[3].Value.ToString());
+            cbxClass3.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[4].Value.ToString());
+            cbxSuite.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[5].Value.ToString());
+            txtApartmentDescription.Text = dgwApartmentList.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtTotalParkingSlot.Text = dgwApartmentList.Rows[e.RowIndex].Cells[7].Value.ToString();
+            txtBuildingNumber.Text = dgwApartmentList.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+        } // End of the data grid view cell double click event method
+
+        private void btnAdminApartmentUpdate_Click(object sender, EventArgs e)
+        {
+
+            ManageApartmentsOOP manageApartmentsOOP = new ManageApartmentsOOP();
+
+            manageApartmentsOOP.Apartments = new ManageApartmentsEntities()
+            {
+
+                ID = int.Parse(txtID.Text),
+                BuildingNumber = txtBuildingNumber.Text,
+                ApartmentNumber = txtApartmentNumber.Text,
+                TotalParkingSlot = txtTotalParkingSlot.Text,
+                ApartmentDescription = txtApartmentDescription.Text,
+                Class1 = cbxClass1.Checked,
+                Class2 = cbxClass2.Checked,
+                Class3 = cbxClass3.Checked,
+                Suite = cbxSuite.Checked
+
+            }; // End of the ManageApartments method
+
+            bool updateResult = manageApartmentsOOP.UpdateApartmentRecord(manageApartmentsOOP.Apartments);
+
+            if (updateResult == true)
+            {
+                MessageBox.Show("Record Updated Successfully");
+            }
+            else
+            {
+                MessageBox.Show("Failed to Updated Record");
+            }
+
+            LoadDataToGridView(); // load the data to the grid view
+            ClearAllText();
+
+        } // End of the Manage APartment update button click event method
+
+        private void btnAdminApartmentDelete_Click(object sender, EventArgs e)
+        {
+
+            ManageApartmentsOOP manageApartmentsOOP = new ManageApartmentsOOP();
+
+            manageApartmentsOOP.Apartments = new ManageApartmentsEntities()
+            {
+
+                ID = int.Parse(txtID.Text)
+
+            }; // End of the ManageApartmentsEntities Method
+
+            bool deleteResult = manageApartmentsOOP.DeleteAparmentRecord();
+
+            if (deleteResult == true)
+            {
+                MessageBox.Show("Record Deleted Successfully");
+            }
+            else
+            {
+                MessageBox.Show("Failed to Deleted Record");
+            }
+
+            LoadDataToGridView();
+            ClearAllText();
+
+        } // End of the Manage Apartment Delete Button
+
+        public void ClearAllText()
+        {// Method, clear all the text when it's is enovoked
+            
+            txtBuildingNumber.Clear();
+            txtApartmentNumber.Clear();
+            txtTotalParkingSlot.Clear();
+            txtApartmentDescription.Clear();
+            cbxClass1.Checked = false;
+            cbxClass2.Checked = false;
+            cbxClass3.Checked = false;
+            cbxSuite.Checked = false;
+
+        } // End of the ClearAllText Method
+
+        private void btnApartmentSearch_Click(object sender, EventArgs e)
+        {
+
+            ManageApartmentsOOP manageApartmentsOOP = new ManageApartmentsOOP();
+            var data = manageApartmentsOOP.GetApartment(txtApartmentSearch.Text);
+            dgwApartmentList.DataSource = data;
+
+        } // End of the Apartment Search Button 
 
     } // End of the ManageApartment Class
 } // End of the namespace E_Apartment

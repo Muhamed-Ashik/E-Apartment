@@ -83,6 +83,7 @@
     <Compile Include="ManageApartments.Designer.cs">
       <DependentUpon>ManageApartments.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageApartmentsOOP.cs" />
     <Compile Include="ManageCustomers.cs">
       <SubType>Form</SubType>
     </Compile>

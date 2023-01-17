@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace E_Apartment
             InitializeComponent();
 
         }
+
+        
 
     
         private void btnManageApartmentsToDashboard_Click(object sender, EventArgs e)
@@ -74,15 +77,42 @@ namespace E_Apartment
 
             // check the fields are empty
             if(txtBuildingNumber.Text == "" || txtApartmentNumber.Text == "" || txtTotalParkingSlot.Text == "" ||
-               txtApartmentDescription.Text == "")
+               txtApartmentDescription.Text == "" || cbxClass1.Checked == false && cbxClass2.Checked == false &&
+               cbxClass3.Checked == false && cbxSuite.Checked == false)
             {
-
-                MessageBox.Show("incorecct");
+                // if the fields empty, then show the message
+                MessageBox.Show("Please fill the text fields!");
 
             } else
-            {
-                MessageBox.Show("correct");
-            }
+            { // if the fields are not empty, execute the below code
+
+                ManageApartmentsOOP manageApartmentsOOP = new ManageApartmentsOOP();
+                manageApartmentsOOP.Apartments = new ManageApartmentsEntities()
+                {
+
+                    BuildingNumber = txtBuildingNumber.Text,
+                    ApartmentNumber = txtApartmentNumber.Text,
+                    TotalParkingSlot = txtTotalParkingSlot.Text,
+                    ApartmentDescription = txtApartmentDescription.Text,
+                    Class1 = cbxClass1.Checked,
+                    Class2 = cbxClass2.Checked,
+                    Class3 = cbxClass3.Checked,
+                    Suite = cbxSuite.Checked
+
+                }; // End of the ManageApartmentsEntities Method
+
+                bool insertResult = manageApartmentsOOP.InsertRecord();
+
+                if(insertResult)
+                {
+                    MessageBox.Show("Record Inserted");
+                }else
+                {
+                    MessageBox.Show("Record Not Inserted");
+                }
+
+
+            } // End of the fields empty check if condition
 
         } // End of the Insert Button
 

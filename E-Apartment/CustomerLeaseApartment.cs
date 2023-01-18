@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace E_Apartment
 {
-    public partial class ViewAvailableApartments : Form
+    public partial class CustomerLeaseApartment : Form
     {
-        public ViewAvailableApartments()
+        public CustomerLeaseApartment()
         {
             InitializeComponent();
         }

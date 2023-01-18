@@ -16,5 +16,15 @@ namespace E_Apartment
         {
             InitializeComponent();
         }
-    }
-}
+
+        private void btnCustomerViewApartments_Click(object sender, EventArgs e)
+        {
+
+            CustomerViewApartments customerViewApartments = new CustomerViewApartments();
+            this.Hide();
+            customerViewApartments.Show();
+
+        } // End of the Customer View Apartment button
+
+    } // End of the customer dashboard class
+} // End of the namespace

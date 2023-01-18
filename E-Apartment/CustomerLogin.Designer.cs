@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCustomerTextClear = new System.Windows.Forms.Button();
+            this.btnCustomerClearAllText = new System.Windows.Forms.Button();
             this.btnCustomerLogin = new System.Windows.Forms.Button();
-            this.txtCustomerPassword = new System.Windows.Forms.TextBox();
+            this.txtCustomerLoginPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCustomerUsername = new System.Windows.Forms.TextBox();
+            this.txtCustomerLoginUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnCustomerTextClear
+            // btnCustomerClearAllText
             // 
-            this.btnCustomerTextClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnCustomerTextClear.Location = new System.Drawing.Point(366, 315);
-            this.btnCustomerTextClear.Name = "btnCustomerTextClear";
-            this.btnCustomerTextClear.Size = new System.Drawing.Size(183, 45);
-            this.btnCustomerTextClear.TabIndex = 13;
-            this.btnCustomerTextClear.Text = "Clear";
-            this.btnCustomerTextClear.UseVisualStyleBackColor = true;
+            this.btnCustomerClearAllText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnCustomerClearAllText.Location = new System.Drawing.Point(366, 315);
+            this.btnCustomerClearAllText.Name = "btnCustomerClearAllText";
+            this.btnCustomerClearAllText.Size = new System.Drawing.Size(183, 45);
+            this.btnCustomerClearAllText.TabIndex = 13;
+            this.btnCustomerClearAllText.Text = "Clear All Text";
+            this.btnCustomerClearAllText.UseVisualStyleBackColor = true;
+            this.btnCustomerClearAllText.Click += new System.EventHandler(this.btnCustomerClearAllText_Click);
             // 
             // btnCustomerLogin
             // 
@@ -56,15 +57,16 @@
             this.btnCustomerLogin.TabIndex = 12;
             this.btnCustomerLogin.Text = "Login";
             this.btnCustomerLogin.UseVisualStyleBackColor = true;
+            this.btnCustomerLogin.Click += new System.EventHandler(this.btnCustomerLogin_Click);
             // 
-            // txtCustomerPassword
+            // txtCustomerLoginPassword
             // 
-            this.txtCustomerPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtCustomerPassword.Location = new System.Drawing.Point(226, 229);
-            this.txtCustomerPassword.Multiline = true;
-            this.txtCustomerPassword.Name = "txtCustomerPassword";
-            this.txtCustomerPassword.Size = new System.Drawing.Size(292, 29);
-            this.txtCustomerPassword.TabIndex = 11;
+            this.txtCustomerLoginPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtCustomerLoginPassword.Location = new System.Drawing.Point(226, 229);
+            this.txtCustomerLoginPassword.Multiline = true;
+            this.txtCustomerLoginPassword.Name = "txtCustomerLoginPassword";
+            this.txtCustomerLoginPassword.Size = new System.Drawing.Size(292, 29);
+            this.txtCustomerLoginPassword.TabIndex = 11;
             // 
             // label3
             // 
@@ -76,14 +78,14 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Password: ";
             // 
-            // txtCustomerUsername
+            // txtCustomerLoginUsername
             // 
-            this.txtCustomerUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtCustomerUsername.Location = new System.Drawing.Point(226, 167);
-            this.txtCustomerUsername.Multiline = true;
-            this.txtCustomerUsername.Name = "txtCustomerUsername";
-            this.txtCustomerUsername.Size = new System.Drawing.Size(292, 29);
-            this.txtCustomerUsername.TabIndex = 9;
+            this.txtCustomerLoginUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtCustomerLoginUsername.Location = new System.Drawing.Point(226, 167);
+            this.txtCustomerLoginUsername.Multiline = true;
+            this.txtCustomerLoginUsername.Name = "txtCustomerLoginUsername";
+            this.txtCustomerLoginUsername.Size = new System.Drawing.Size(292, 29);
+            this.txtCustomerLoginUsername.TabIndex = 9;
             // 
             // label2
             // 
@@ -110,11 +112,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCustomerTextClear);
+            this.Controls.Add(this.btnCustomerClearAllText);
             this.Controls.Add(this.btnCustomerLogin);
-            this.Controls.Add(this.txtCustomerPassword);
+            this.Controls.Add(this.txtCustomerLoginPassword);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCustomerUsername);
+            this.Controls.Add(this.txtCustomerLoginUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CustomerLogin";
@@ -126,11 +128,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCustomerTextClear;
+        private System.Windows.Forms.Button btnCustomerClearAllText;
         private System.Windows.Forms.Button btnCustomerLogin;
-        private System.Windows.Forms.TextBox txtCustomerPassword;
+        private System.Windows.Forms.TextBox txtCustomerLoginPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCustomerUsername;
+        private System.Windows.Forms.TextBox txtCustomerLoginUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

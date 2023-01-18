@@ -179,12 +179,13 @@
             // 
             // btnCustomerViewApartments
             // 
-            this.btnCustomerViewApartments.Location = new System.Drawing.Point(192, 12);
+            this.btnCustomerViewApartments.Location = new System.Drawing.Point(26, 21);
             this.btnCustomerViewApartments.Name = "btnCustomerViewApartments";
             this.btnCustomerViewApartments.Size = new System.Drawing.Size(161, 41);
             this.btnCustomerViewApartments.TabIndex = 1;
             this.btnCustomerViewApartments.Text = "View Available Apartments";
             this.btnCustomerViewApartments.UseVisualStyleBackColor = true;
+            this.btnCustomerViewApartments.Click += new System.EventHandler(this.btnCustomerViewApartments_Click);
             // 
             // CustomerDashboard
             // 

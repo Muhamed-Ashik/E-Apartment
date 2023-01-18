@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCustomerTextClear = new System.Windows.Forms.Button();
+            this.btnClearTextAll = new System.Windows.Forms.Button();
             this.btnCustomerSignUp = new System.Windows.Forms.Button();
-            this.txtAdminPassword = new System.Windows.Forms.TextBox();
+            this.txtCustomerPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtAdminUsername = new System.Windows.Forms.TextBox();
+            this.txtCustomerUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCustomerConfirmPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnCustomerTextClear
+            // btnClearTextAll
             // 
-            this.btnCustomerTextClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnCustomerTextClear.Location = new System.Drawing.Point(427, 362);
-            this.btnCustomerTextClear.Name = "btnCustomerTextClear";
-            this.btnCustomerTextClear.Size = new System.Drawing.Size(183, 45);
-            this.btnCustomerTextClear.TabIndex = 13;
-            this.btnCustomerTextClear.Text = "Clear";
-            this.btnCustomerTextClear.UseVisualStyleBackColor = true;
+            this.btnClearTextAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnClearTextAll.Location = new System.Drawing.Point(426, 314);
+            this.btnClearTextAll.Name = "btnClearTextAll";
+            this.btnClearTextAll.Size = new System.Drawing.Size(183, 45);
+            this.btnClearTextAll.TabIndex = 13;
+            this.btnClearTextAll.Text = "Clear All Text";
+            this.btnClearTextAll.UseVisualStyleBackColor = true;
+            this.btnClearTextAll.Click += new System.EventHandler(this.btnClearTextAll_Click);
             // 
             // btnCustomerSignUp
             // 
             this.btnCustomerSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnCustomerSignUp.Location = new System.Drawing.Point(218, 362);
+            this.btnCustomerSignUp.Location = new System.Drawing.Point(217, 314);
             this.btnCustomerSignUp.Name = "btnCustomerSignUp";
             this.btnCustomerSignUp.Size = new System.Drawing.Size(183, 45);
             this.btnCustomerSignUp.TabIndex = 12;
-            this.btnCustomerSignUp.Text = "Login";
+            this.btnCustomerSignUp.Text = "SignUp";
             this.btnCustomerSignUp.UseVisualStyleBackColor = true;
+            this.btnCustomerSignUp.Click += new System.EventHandler(this.btnCustomerSignUp_Click);
             // 
-            // txtAdminPassword
+            // txtCustomerPassword
             // 
-            this.txtAdminPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtAdminPassword.Location = new System.Drawing.Point(302, 217);
-            this.txtAdminPassword.Multiline = true;
-            this.txtAdminPassword.Name = "txtAdminPassword";
-            this.txtAdminPassword.Size = new System.Drawing.Size(292, 29);
-            this.txtAdminPassword.TabIndex = 11;
+            this.txtCustomerPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtCustomerPassword.Location = new System.Drawing.Point(302, 217);
+            this.txtCustomerPassword.Multiline = true;
+            this.txtCustomerPassword.Name = "txtCustomerPassword";
+            this.txtCustomerPassword.Size = new System.Drawing.Size(292, 29);
+            this.txtCustomerPassword.TabIndex = 11;
             // 
             // label3
             // 
@@ -78,14 +78,14 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Password: ";
             // 
-            // txtAdminUsername
+            // txtCustomerUsername
             // 
-            this.txtAdminUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtAdminUsername.Location = new System.Drawing.Point(302, 155);
-            this.txtAdminUsername.Multiline = true;
-            this.txtAdminUsername.Name = "txtAdminUsername";
-            this.txtAdminUsername.Size = new System.Drawing.Size(292, 29);
-            this.txtAdminUsername.TabIndex = 9;
+            this.txtCustomerUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtCustomerUsername.Location = new System.Drawing.Point(302, 155);
+            this.txtCustomerUsername.Multiline = true;
+            this.txtCustomerUsername.Name = "txtCustomerUsername";
+            this.txtCustomerUsername.Size = new System.Drawing.Size(292, 29);
+            this.txtCustomerUsername.TabIndex = 9;
             // 
             // label2
             // 
@@ -107,37 +107,16 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Customer SignUp";
             // 
-            // txtCustomerConfirmPassword
-            // 
-            this.txtCustomerConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtCustomerConfirmPassword.Location = new System.Drawing.Point(302, 282);
-            this.txtCustomerConfirmPassword.Multiline = true;
-            this.txtCustomerConfirmPassword.Name = "txtCustomerConfirmPassword";
-            this.txtCustomerConfirmPassword.Size = new System.Drawing.Size(292, 29);
-            this.txtCustomerConfirmPassword.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(143, 285);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 20);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Confirm Password: ";
-            // 
             // CustomerSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtCustomerConfirmPassword);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnCustomerTextClear);
+            this.Controls.Add(this.btnClearTextAll);
             this.Controls.Add(this.btnCustomerSignUp);
-            this.Controls.Add(this.txtAdminPassword);
+            this.Controls.Add(this.txtCustomerPassword);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtAdminUsername);
+            this.Controls.Add(this.txtCustomerUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CustomerSignUp";
@@ -149,14 +128,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCustomerTextClear;
+        private System.Windows.Forms.Button btnClearTextAll;
         private System.Windows.Forms.Button btnCustomerSignUp;
-        private System.Windows.Forms.TextBox txtAdminPassword;
+        private System.Windows.Forms.TextBox txtCustomerPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtAdminUsername;
+        private System.Windows.Forms.TextBox txtCustomerUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCustomerConfirmPassword;
-        private System.Windows.Forms.Label label4;
     }
 }

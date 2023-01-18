@@ -35,13 +35,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAdminLogin = new System.Windows.Forms.Button();
             this.btnAdminTextClear = new System.Windows.Forms.Button();
+            this.lblIamCustomer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(284, 81);
+            this.label1.Location = new System.Drawing.Point(363, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 31);
             this.label1.TabIndex = 0;
@@ -51,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(105, 172);
+            this.label2.Location = new System.Drawing.Point(184, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 1;
@@ -59,27 +60,29 @@
             // 
             // txtAdminUsername
             // 
+            this.txtAdminUsername.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdminUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtAdminUsername.Location = new System.Drawing.Point(202, 169);
+            this.txtAdminUsername.Location = new System.Drawing.Point(281, 169);
             this.txtAdminUsername.Multiline = true;
             this.txtAdminUsername.Name = "txtAdminUsername";
-            this.txtAdminUsername.Size = new System.Drawing.Size(292, 29);
+            this.txtAdminUsername.Size = new System.Drawing.Size(351, 29);
             this.txtAdminUsername.TabIndex = 2;
             // 
             // txtAdminPassword
             // 
+            this.txtAdminPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtAdminPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtAdminPassword.Location = new System.Drawing.Point(202, 231);
+            this.txtAdminPassword.Location = new System.Drawing.Point(281, 231);
             this.txtAdminPassword.Multiline = true;
             this.txtAdminPassword.Name = "txtAdminPassword";
-            this.txtAdminPassword.Size = new System.Drawing.Size(292, 29);
+            this.txtAdminPassword.Size = new System.Drawing.Size(351, 29);
             this.txtAdminPassword.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(105, 234);
+            this.label3.Location = new System.Drawing.Point(184, 234);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 3;
@@ -87,31 +90,48 @@
             // 
             // btnAdminLogin
             // 
+            this.btnAdminLogin.BackColor = System.Drawing.Color.Green;
             this.btnAdminLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnAdminLogin.Location = new System.Drawing.Point(133, 317);
+            this.btnAdminLogin.Location = new System.Drawing.Point(333, 306);
             this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(183, 45);
+            this.btnAdminLogin.Size = new System.Drawing.Size(146, 45);
             this.btnAdminLogin.TabIndex = 5;
             this.btnAdminLogin.Text = "Login";
-            this.btnAdminLogin.UseVisualStyleBackColor = true;
+            this.btnAdminLogin.UseVisualStyleBackColor = false;
             this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
             // btnAdminTextClear
             // 
+            this.btnAdminTextClear.BackColor = System.Drawing.Color.Red;
             this.btnAdminTextClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnAdminTextClear.Location = new System.Drawing.Point(342, 317);
+            this.btnAdminTextClear.Location = new System.Drawing.Point(485, 306);
             this.btnAdminTextClear.Name = "btnAdminTextClear";
-            this.btnAdminTextClear.Size = new System.Drawing.Size(183, 45);
+            this.btnAdminTextClear.Size = new System.Drawing.Size(147, 45);
             this.btnAdminTextClear.TabIndex = 6;
-            this.btnAdminTextClear.Text = "Clear";
-            this.btnAdminTextClear.UseVisualStyleBackColor = true;
+            this.btnAdminTextClear.Text = "Clear All Text";
+            this.btnAdminTextClear.UseVisualStyleBackColor = false;
             this.btnAdminTextClear.Click += new System.EventHandler(this.btnAdminTextClear_Click);
+            // 
+            // lblIamCustomer
+            // 
+            this.lblIamCustomer.AutoSize = true;
+            this.lblIamCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblIamCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblIamCustomer.ForeColor = System.Drawing.Color.Green;
+            this.lblIamCustomer.Location = new System.Drawing.Point(633, 9);
+            this.lblIamCustomer.Name = "lblIamCustomer";
+            this.lblIamCustomer.Size = new System.Drawing.Size(155, 25);
+            this.lblIamCustomer.TabIndex = 7;
+            this.lblIamCustomer.Text = "I am a Customer";
+            this.lblIamCustomer.Click += new System.EventHandler(this.lblIamCustomer_Click);
             // 
             // AdminLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblIamCustomer);
             this.Controls.Add(this.btnAdminTextClear);
             this.Controls.Add(this.btnAdminLogin);
             this.Controls.Add(this.txtAdminPassword);
@@ -137,5 +157,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdminLogin;
         private System.Windows.Forms.Button btnAdminTextClear;
+        private System.Windows.Forms.Label lblIamCustomer;
     }
 }

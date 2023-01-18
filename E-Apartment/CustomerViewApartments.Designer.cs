@@ -206,7 +206,7 @@
             // 
             // btnLeaseSelectedApartment
             // 
-            this.btnLeaseSelectedApartment.Location = new System.Drawing.Point(894, 491);
+            this.btnLeaseSelectedApartment.Location = new System.Drawing.Point(880, 472);
             this.btnLeaseSelectedApartment.Name = "btnLeaseSelectedApartment";
             this.btnLeaseSelectedApartment.Size = new System.Drawing.Size(286, 23);
             this.btnLeaseSelectedApartment.TabIndex = 55;
@@ -216,7 +216,7 @@
             // 
             // btnClearSelectedApartment
             // 
-            this.btnClearSelectedApartment.Location = new System.Drawing.Point(894, 520);
+            this.btnClearSelectedApartment.Location = new System.Drawing.Point(884, 514);
             this.btnClearSelectedApartment.Name = "btnClearSelectedApartment";
             this.btnClearSelectedApartment.Size = new System.Drawing.Size(286, 23);
             this.btnClearSelectedApartment.TabIndex = 75;
@@ -283,7 +283,6 @@
             this.txtDurationOfLease.Name = "txtDurationOfLease";
             this.txtDurationOfLease.Size = new System.Drawing.Size(205, 26);
             this.txtDurationOfLease.TabIndex = 112;
-
             // 
             // label10
             // 
@@ -373,7 +372,7 @@
             // 
             // btnClearAllText
             // 
-            this.btnClearAllText.Location = new System.Drawing.Point(890, 549);
+            this.btnClearAllText.Location = new System.Drawing.Point(884, 558);
             this.btnClearAllText.Name = "btnClearAllText";
             this.btnClearAllText.Size = new System.Drawing.Size(286, 23);
             this.btnClearAllText.TabIndex = 119;

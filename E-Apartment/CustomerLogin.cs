@@ -98,5 +98,22 @@ namespace E_Apartment
 
         } // ENd of the Customrr Clear All Text button
 
+        private void lblIamAdmin_Click(object sender, EventArgs e)
+        {
+
+            AdminLogin adminLoginPage = new AdminLogin();
+            this.Hide();
+            adminLoginPage.Show();
+
+        } // End of the I am Admin
+
+        private void lblSignUp_Click(object sender, EventArgs e)
+        {
+            CustomerSignUp customerSignUpPage = new CustomerSignUp();
+            this.Hide();
+            customerSignUpPage.Show();
+
+        } // End of the lblSignUp click method
+
     } // End of the CUstomerLogin class
 } // End of the namespace

@@ -76,5 +76,23 @@ namespace E_Apartment
 
         } // End of the button Clear All Text
 
+        private void lblIamAdmin_Click(object sender, EventArgs e)
+        {
+
+            AdminLogin adminLoginPage = new AdminLogin();
+            this.Hide();
+            adminLoginPage.Show();
+
+        } // End of the lblIamAdmin method
+
+        private void lblLoginPage_Click(object sender, EventArgs e)
+        {
+
+            CustomerLogin customerLoginPage= new CustomerLogin();
+            this.Hide();
+            customerLoginPage.Show();
+
+        } //End of the lblLogin click method
+
     } // End of the class Customer SignUp
 } // End of the namespace E_Apartment

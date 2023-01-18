@@ -113,7 +113,13 @@ namespace E_Apartment
 
         } // ENd of the Admin Text Clear button
 
+        private void lblIamCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerSignUp customerSignUpPage = new CustomerSignUp();
+            this.Hide();
+            customerSignUpPage.Show();
 
+        } // End of the lblIamCustomer click method
 
     } // End of the class AdminLogin
 } // End of the namespace E_Apartment

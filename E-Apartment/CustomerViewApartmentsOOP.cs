@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -72,39 +73,53 @@ namespace E_Apartment
             
         } // End of the get ApartmentDetails
 
+        public void FetchApartmentNotAvailable()
+        {
+            
+
+        }
+
         internal bool InsertOccupantLeaseDetails()
         {
 
             try
             {
 
-                string insertQuery = "INSERT INTO Tbl_Occupant_Lease_Details (SelectedBuildingNumber, SelectedApartmentNumber, SelectedApartmentLocation, AvailableTotalParkingSlot, Name,  NIC, Address, ContactNo, ParkingSlotNeeded, LeasePostedDate, DurationOfLease, Comments) " +
+                    string insertQuery = "INSERT INTO Tbl_Occupant_Lease_Details (SelectedBuildingNumber, SelectedApartmentNumber, SelectedApartmentLocation, AvailableTotalParkingSlot, Name,  NIC, Address, ContactNo, ParkingSlotNeeded, LeasePostedDate, DurationOfLease, Comments) " +
                     "VALUES ('" + OccupantLeaseDetails.SelectedBuildingNumber + "', '" + OccupantLeaseDetails.SelectedApartmentNumber + "', '" + OccupantLeaseDetails.SelectedApartmentLocation + "', '" + OccupantLeaseDetails.AvailableTotalParkingSlot + "', '" + OccupantLeaseDetails.OccupantName + "', '" + OccupantLeaseDetails.NIC + "', '" + OccupantLeaseDetails.Address + "',  '" + OccupantLeaseDetails.ContactNo + "', '" + OccupantLeaseDetails.ParkingSlotNeeded + "', '" + OccupantLeaseDetails.LeasePostedDate + "', '" + OccupantLeaseDetails.DurationOfLease + "', '" + OccupantLeaseDetails.OccupantComments + "')";
 
-                sqlConnection.Open();
+                    sqlConnection.Open();
 
-                sqlCommand = new SqlCommand(insertQuery, sqlConnection);
+                    sqlCommand = new SqlCommand(insertQuery, sqlConnection);
 
-                int insertRecordResult = sqlCommand.ExecuteNonQuery();
+                    int insertRecordResult = sqlCommand.ExecuteNonQuery();
 
-                if (insertRecordResult > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                    if (insertRecordResult > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
 
 
+           
+
+
+        
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Occured: " + ex.Message);
                 return false;
+                
             }
-
+            
         } // ENd of the InsertOccupantLeaseDetails method
+
+        
+        
     } // End of the class
 
     class ApartmentEntities

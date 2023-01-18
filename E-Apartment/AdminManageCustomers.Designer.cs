@@ -1,6 +1,6 @@
 ﻿namespace E_Apartment
 {
-    partial class ManageCustomers
+    partial class AdminManageCustomers
     {
         /// <summary>
         /// Required designer variable.

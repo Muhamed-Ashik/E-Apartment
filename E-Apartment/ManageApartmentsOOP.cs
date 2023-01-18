@@ -25,9 +25,9 @@ namespace E_Apartment
             try
             {
 
-                string insertQuery = "INSERT INTO Tbl_Manage_Apartments (ApartmentNumber, Class1, Class2, Class3, Suite, ApartmentDescription, TotalParkingSlot, BuildingNumber) " +
-                    "VALUES ('" + Apartments.ApartmentNumber + "', '" + Apartments.Class1 + "', '" + Apartments.Class2 + "', '" + Apartments.Class3 + "', '" + Apartments.Suite + "', '" +
-                    Apartments.ApartmentDescription + "',  '" + Apartments.TotalParkingSlot + "',  '" + Apartments.BuildingNumber + "')";
+                string insertQuery = "INSERT INTO Tbl_Manage_Apartments (ApartmentNumber, Class1, Class2, Class3, Suite, Location, ApartmentDescription, TotalParkingSlot, Status, BuildingNumber) " +
+                    "VALUES ('" + Apartments.ApartmentNumber + "', '" + Apartments.Class1 + "', '" + Apartments.Class2 + "', '" + Apartments.Class3 + "', '" + Apartments.Suite + "', '"+ Apartments.ApartmentLocation +"', '" +
+                    Apartments.ApartmentDescription + "',  '" + Apartments.TotalParkingSlot + "', '"+ Apartments.ApartmentStatus +"', '" + Apartments.BuildingNumber + "')";
 
                 sqlConnection.Open();
 
@@ -84,9 +84,11 @@ namespace E_Apartment
                         Class2 = bool.Parse(dataFetched[3].ToString()), 
                         Class3 = bool.Parse(dataFetched[4].ToString()),
                         Suite = bool.Parse(dataFetched[5].ToString()),
-                        ApartmentDescription = dataFetched[6].ToString(),
-                        TotalParkingSlot = dataFetched[7].ToString(),
-                        BuildingNumber = dataFetched[8].ToString()
+                        ApartmentLocation = dataFetched[6].ToString(),
+                        ApartmentDescription = dataFetched[7].ToString(),
+                        TotalParkingSlot = dataFetched[8].ToString(),
+                        ApartmentStatus= dataFetched[9].ToString(),
+                        BuildingNumber = dataFetched[10].ToString()
 
                     });
 
@@ -107,7 +109,7 @@ namespace E_Apartment
         internal bool UpdateApartmentRecord(ManageApartmentsEntities apartments)
         {
         
-            string updateQuery = "Update Tbl_Manage_Apartments Set ApartmentNumber='" + apartments.ApartmentNumber + "', Class1='" + apartments.Class1 + "', Class2='" + apartments.Class2 + "', Class3='" + apartments.Class3 + "', Suite='" + apartments.Suite+ "', ApartmentDescription='" + apartments.ApartmentDescription + "', TotalParkingSlot='" + apartments.TotalParkingSlot + "', BuildingNumber='" + apartments.BuildingNumber + "' WHERE ID='" + apartments.ID + "' ";
+            string updateQuery = "Update Tbl_Manage_Apartments Set ApartmentNumber='" + apartments.ApartmentNumber + "', Class1='" + apartments.Class1 + "', Class2='" + apartments.Class2 + "', Class3='" + apartments.Class3 + "', Suite='" + apartments.Suite+ "', Location='"+ apartments.ApartmentLocation +"', ApartmentDescription='"+ apartments.ApartmentDescription +"', TotalParkingSlot='"+ apartments.TotalParkingSlot +"', Status='" + apartments.ApartmentStatus + "', BuildingNumber='" + apartments.BuildingNumber + "' WHERE ID='" + apartments.ID + "' ";
             sqlCommand = new SqlCommand(updateQuery, sqlConnection);
 
             sqlConnection.Open();
@@ -156,7 +158,7 @@ namespace E_Apartment
         internal object GetApartment(string apartmentSearched)
         {
 
-            string searchQuery = "SELECT * FROM Tbl_Manage_Apartments WHERE ApartmentNumber = '"+ apartmentSearched + "' OR BuildingNumber = '"+ apartmentSearched +"' ";
+            string searchQuery = "SELECT * FROM Tbl_Manage_Apartments WHERE ApartmentNumber = '"+ apartmentSearched + "' OR BuildingNumber = '"+ apartmentSearched +"' OR Location = '"+ apartmentSearched +"' OR Class1 = '"+ apartmentSearched +"' OR Class2 = '"+ apartmentSearched +"' OR Class3 = '"+ apartmentSearched +"' OR Suite = '"+ apartmentSearched +"' ";
             sqlDataAdapter = new SqlDataAdapter(searchQuery, sqlConnection);
 
             dataTable = new DataTable();
@@ -179,9 +181,11 @@ namespace E_Apartment
                     Class2 = bool.Parse(data[3].ToString()),
                     Class3 = bool.Parse(data[4].ToString()),
                     Suite = bool.Parse(data[5].ToString()),
-                    ApartmentDescription = data[6].ToString(),
-                    TotalParkingSlot = data[7].ToString(),
-                    BuildingNumber = data[8].ToString()
+                    ApartmentLocation = data[6].ToString(),
+                    ApartmentDescription = data[7].ToString(),
+                    TotalParkingSlot = data[8].ToString(),
+                    ApartmentStatus = data[9].ToString(),
+                    BuildingNumber = data[10].ToString()
 
 
                 }); // End of the ManageManageApartmentsEntities 
@@ -203,6 +207,8 @@ namespace E_Apartment
         public bool Class2 { get; set; }
         public bool Class3 { get; set; }
         public bool Suite { get; set; }
+        public string  ApartmentStatus { get; set; }
+        public string ApartmentLocation { get; set; }
         public string ApartmentDescription { get; set; }
         public string TotalParkingSlot { get; set; }
         public string BuildingNumber { get; set; }

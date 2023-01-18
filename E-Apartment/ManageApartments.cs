@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace E_Apartment
@@ -94,6 +95,8 @@ namespace E_Apartment
                     ApartmentNumber = txtApartmentNumber.Text,
                     TotalParkingSlot = txtTotalParkingSlot.Text,
                     ApartmentDescription = txtApartmentDescription.Text,
+                    ApartmentLocation = txtApartmentLocation.Text,
+                    ApartmentStatus = cmbApartmentStatus.Text,
                     Class1 = cbxClass1.Checked,
                     Class2 = cbxClass2.Checked,
                     Class3 = cbxClass3.Checked,
@@ -138,9 +141,11 @@ namespace E_Apartment
             cbxClass2.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[3].Value.ToString());
             cbxClass3.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[4].Value.ToString());
             cbxSuite.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[5].Value.ToString());
-            txtApartmentDescription.Text = dgwApartmentList.Rows[e.RowIndex].Cells[6].Value.ToString();
-            txtTotalParkingSlot.Text = dgwApartmentList.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtBuildingNumber.Text = dgwApartmentList.Rows[e.RowIndex].Cells[8].Value.ToString();
+            cmbApartmentStatus.Text = dgwApartmentList.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtApartmentLocation.Text = dgwApartmentList.Rows[e.RowIndex].Cells[7].Value.ToString();
+            txtApartmentDescription.Text = dgwApartmentList.Rows[e.RowIndex].Cells[8].Value.ToString();
+            txtTotalParkingSlot.Text = dgwApartmentList.Rows[e.RowIndex].Cells[9].Value.ToString();
+            txtBuildingNumber.Text = dgwApartmentList.Rows[e.RowIndex].Cells[10].Value.ToString();
 
         } // End of the data grid view cell double click event method
 
@@ -160,7 +165,9 @@ namespace E_Apartment
                 Class1 = cbxClass1.Checked,
                 Class2 = cbxClass2.Checked,
                 Class3 = cbxClass3.Checked,
-                Suite = cbxSuite.Checked
+                Suite = cbxSuite.Checked,
+                ApartmentLocation = txtApartmentLocation.Text,
+                ApartmentStatus = cmbApartmentStatus.Text
 
             }; // End of the ManageApartments method
 
@@ -215,6 +222,8 @@ namespace E_Apartment
             txtApartmentNumber.Clear();
             txtTotalParkingSlot.Clear();
             txtApartmentDescription.Clear();
+            cmbApartmentStatus.SelectedItem = String.Empty;
+            txtApartmentLocation.Clear();
             cbxClass1.Checked = false;
             cbxClass2.Checked = false;
             cbxClass3.Checked = false;
@@ -230,6 +239,14 @@ namespace E_Apartment
             dgwApartmentList.DataSource = data;
 
         } // End of the Apartment Search Button 
+
+        private void txtApartmentSearch_TextChanged(object sender, EventArgs e)
+        {
+            ManageApartmentsOOP manageApartmentsOOP = new ManageApartmentsOOP();
+            var data = manageApartmentsOOP.GetApartment(txtApartmentSearch.Text);
+            dgwApartmentList.DataSource = data;
+
+        } // End of the Apartment Text Changed Method
 
     } // End of the ManageApartment Class
 } // End of the namespace E_Apartment

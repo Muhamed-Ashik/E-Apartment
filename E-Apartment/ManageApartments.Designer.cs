@@ -273,6 +273,7 @@
             this.txtApartmentSearch.Name = "txtApartmentSearch";
             this.txtApartmentSearch.Size = new System.Drawing.Size(342, 34);
             this.txtApartmentSearch.TabIndex = 23;
+            this.txtApartmentSearch.TextChanged += new System.EventHandler(this.txtApartmentSearch_TextChanged);
             // 
             // txtID
             // 

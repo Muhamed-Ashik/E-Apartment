@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace E_Apartment
 {
-    public partial class ManageCustomers : Form
+    public partial class AdminManageCustomers : Form
     {
-        public ManageCustomers()
+        public AdminManageCustomers()
         {
             InitializeComponent();
         }
+
+        
     }
 }

@@ -64,12 +64,6 @@
     <Compile Include="CustomerDashboard.Designer.cs">
       <DependentUpon>CustomerDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerLeaseApartment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerLeaseApartment.Designer.cs">
-      <DependentUpon>CustomerLeaseApartment.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomerLogin.cs">
       <SubType>Form</SubType>
     </Compile>

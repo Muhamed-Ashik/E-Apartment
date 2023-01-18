@@ -17,6 +17,7 @@ namespace E_Apartment
         {
             InitializeComponent();
             LoadDataToGridView();
+            
         }
 
         private void btnCustomerViewDashboard_Click(object sender, EventArgs e)
@@ -56,15 +57,9 @@ namespace E_Apartment
         private void dgwApartmentList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            txtID.Text = dgwApartmentList.Rows[e.RowIndex].Cells[0].Value.ToString();
+            
             txtApartmentNumber.Text = dgwApartmentList.Rows[e.RowIndex].Cells[1].Value.ToString();
-            cbxClass1.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[2].Value.ToString());
-            cbxClass2.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[3].Value.ToString());
-            cbxClass3.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[4].Value.ToString());
-            cbxSuite.Checked = bool.Parse(dgwApartmentList.Rows[e.RowIndex].Cells[5].Value.ToString());
-            cmbApartmentStatus.Text = dgwApartmentList.Rows[e.RowIndex].Cells[6].Value.ToString();
             txtApartmentLocation.Text = dgwApartmentList.Rows[e.RowIndex].Cells[7].Value.ToString();
-            txtApartmentDescription.Text = dgwApartmentList.Rows[e.RowIndex].Cells[8].Value.ToString();
             txtTotalParkingSlot.Text = dgwApartmentList.Rows[e.RowIndex].Cells[9].Value.ToString();
             txtBuildingNumber.Text = dgwApartmentList.Rows[e.RowIndex].Cells[10].Value.ToString();
 
@@ -75,13 +70,77 @@ namespace E_Apartment
             txtBuildingNumber.Clear();
             txtApartmentNumber.Clear();
             txtTotalParkingSlot.Clear();
-            txtApartmentDescription.Clear();
-            cmbApartmentStatus.Text = "";
             txtApartmentLocation.Clear();
-            cbxClass1.Checked = false;
-            cbxClass2.Checked = false;
-            cbxClass3.Checked = false;
-            cbxSuite.Checked = false;
+            
         }
+
+        private void btnLeaseSelectedApartment_Click(object sender, EventArgs e)
+        { // Method execute, when the lease apartment button clicked
+
+            // check the fiedls are empty or not
+            if(txtApartmentNumber.Text == "" || txtApartmentLocation.Text == "" || txtBuildingNumber.Text == "" || txtTotalParkingSlot.Text == "")
+            {
+                
+                MessageBox.Show("Please select the apartment");
+
+            } else
+            {
+                // check the occupant details fiedls are empty
+                if(txtOccupantName.Text == "" || txtOccupantNIC.Text == "" || txtOccupantAddress.Text == "" || txtOccupantContactNo.Text == "" || txtOccupantParkingSlotNeeded.Text == "" || txtDurationOfLease.Text == "" || txtComments.Text == "")
+                { // if empty, show the message below
+                    MessageBox.Show("Please fill the required details");
+                } else
+                { // if not empty, execute the code
+
+                    CustomerViewApartmentsOOP customerViewApartmentsOOP = new CustomerViewApartmentsOOP();
+                    customerViewApartmentsOOP.OccupantLeaseDetails = new OccupantEntities()
+                    {
+                        SelectedApartmentNumber = txtApartmentNumber.Text,
+                        SelectedApartmentLocation = txtApartmentLocation.Text,
+                        SelectedBuildingNumber = txtBuildingNumber.Text,
+                        AvailableTotalParkingSlot = txtTotalParkingSlot.Text,
+                        OccupantName = txtOccupantName.Text,
+                        NIC = txtOccupantNIC.Text,
+                        Address = txtOccupantAddress.Text,
+                        ContactNo = txtOccupantContactNo.Text,
+                        ParkingSlotNeeded = txtOccupantParkingSlotNeeded.Text,
+                        LeasePostedDate = DateTime.Now.ToString("MM/dd/yyyy"),
+                        DurationOfLease = txtDurationOfLease.Text,
+                        OccupantComments = txtComments.Text
+
+                    };
+
+                    bool insertResult = customerViewApartmentsOOP.InsertOccupantLeaseDetails();
+
+                    if (insertResult)
+                    {
+                        MessageBox.Show("Record Inserted");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Record Not Inserted");
+                    }
+
+
+
+                } // End of the customer detaisl field empty check if and else condition
+
+            } // end of the selected apartment field empty check if and else condition
+
+        } // End of the button lease apartment 
+
+        private void btnClearAllText_Click(object sender, EventArgs e)
+        {
+
+            txtOccupantName.Clear();
+            txtOccupantNIC.Clear();
+            txtOccupantAddress.Clear();
+            txtOccupantContactNo.Clear();
+            txtOccupantParkingSlotNeeded.Clear();
+            txtComments.Clear();
+
+        } // End of the button Clear ALl Text
+
+        
     } // End of the Customer View Apartments class
 } // End of the namespace

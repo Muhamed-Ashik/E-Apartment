@@ -16,6 +16,9 @@ namespace E_Apartment
         SqlConnection sqlConnection = new SqlConnection("Data Source=DESKTOP-UU5O8KP;Initial Catalog=_E-Apartment;Integrated Security=True");
         DataTable dataTable;
         SqlDataAdapter sqlDataAdapter;
+        SqlCommand sqlCommand;
+
+        public OccupantEntities OccupantLeaseDetails { get; set; }
         public List<ApartmentEntities> GetApartmentsDetails()
         {
             try
@@ -69,6 +72,39 @@ namespace E_Apartment
             
         } // End of the get ApartmentDetails
 
+        internal bool InsertOccupantLeaseDetails()
+        {
+
+            try
+            {
+
+                string insertQuery = "INSERT INTO Tbl_Occupant_Lease_Details (SelectedBuildingNumber, SelectedApartmentNumber, SelectedApartmentLocation, AvailableTotalParkingSlot, Name,  NIC, Address, ContactNo, ParkingSlotNeeded, LeasePostedDate, DurationOfLease, Comments) " +
+                    "VALUES ('" + OccupantLeaseDetails.SelectedBuildingNumber + "', '" + OccupantLeaseDetails.SelectedApartmentNumber + "', '" + OccupantLeaseDetails.SelectedApartmentLocation + "', '" + OccupantLeaseDetails.AvailableTotalParkingSlot + "', '" + OccupantLeaseDetails.OccupantName + "', '" + OccupantLeaseDetails.NIC + "', '" + OccupantLeaseDetails.Address + "',  '" + OccupantLeaseDetails.ContactNo + "', '" + OccupantLeaseDetails.ParkingSlotNeeded + "', '" + OccupantLeaseDetails.LeasePostedDate + "', '" + OccupantLeaseDetails.DurationOfLease + "', '" + OccupantLeaseDetails.OccupantComments + "')";
+
+                sqlConnection.Open();
+
+                sqlCommand = new SqlCommand(insertQuery, sqlConnection);
+
+                int insertRecordResult = sqlCommand.ExecuteNonQuery();
+
+                if (insertRecordResult > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occured: " + ex.Message);
+                return false;
+            }
+
+        } // ENd of the InsertOccupantLeaseDetails method
     } // End of the class
 
     class ApartmentEntities
@@ -86,5 +122,23 @@ namespace E_Apartment
         public string BuildingNumber { get; set; }
 
     }
+
+    class OccupantEntities
+    {
+        public int ID { get; set; }
+        public string SelectedBuildingNumber { get; set; }
+        public string SelectedApartmentNumber { get; set; }
+        public string SelectedApartmentLocation { get; set; }
+        public string AvailableTotalParkingSlot { get; set; }
+        public string OccupantName { get; set; }
+        public string NIC { get; set; }
+        public string Address { get; set; }
+        public string ContactNo { get; set; }
+        public string ParkingSlotNeeded { get; set; }
+        public string LeasePostedDate { get; set; }
+        public string DurationOfLease { get; set; }
+        public string OccupantComments { get; set; }
+
+    } // End of the class OccupantEntities
 
 } // End of the namespace

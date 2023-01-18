@@ -248,5 +248,9 @@ namespace E_Apartment
 
         } // End of the Apartment Text Changed Method
 
+        private void btnAdminApartmentInsert_Click_1(object sender, EventArgs e)
+        {
+
+        }
     } // End of the ManageApartment Class
 } // End of the namespace E_Apartment

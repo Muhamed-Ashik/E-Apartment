@@ -59,5 +59,14 @@ namespace E_Apartment
 
         } // End of the manage building button click
 
+        private void btnAdminManageLease_Click(object sender, EventArgs e)
+        {
+
+            ManageLease manageLease = new ManageLease();
+            this.Hide();
+            manageLease.Show();
+
+        } // End of the manage lease button
+
     } // End of the AdminDashboard
 } // End of E_Apartment namespace

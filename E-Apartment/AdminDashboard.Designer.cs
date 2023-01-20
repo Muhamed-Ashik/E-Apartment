@@ -129,6 +129,7 @@
             this.btnAdminManageLease.TabIndex = 4;
             this.btnAdminManageLease.Text = "Manage Lease";
             this.btnAdminManageLease.UseVisualStyleBackColor = false;
+            this.btnAdminManageLease.Click += new System.EventHandler(this.btnAdminManageLease_Click);
             // 
             // btnAdminManageCustomer
             // 

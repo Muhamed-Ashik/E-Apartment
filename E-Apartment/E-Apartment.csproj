@@ -106,6 +106,7 @@
     <Compile Include="ManageLease.Designer.cs">
       <DependentUpon>ManageLease.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageLeaseOOP.cs" />
     <Compile Include="ManageReports.cs">
       <SubType>Form</SubType>
     </Compile>

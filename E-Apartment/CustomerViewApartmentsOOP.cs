@@ -73,20 +73,17 @@ namespace E_Apartment
             
         } // End of the get ApartmentDetails
 
-        public void FetchApartmentNotAvailable()
-        {
-            
-
-        }
-
         internal bool InsertOccupantLeaseDetails()
         {
 
             try
             {
 
-                    string insertQuery = "INSERT INTO Tbl_Occupant_Lease_Details (SelectedBuildingNumber, SelectedApartmentNumber, SelectedApartmentLocation, AvailableTotalParkingSlot, Name,  NIC, Address, ContactNo, ParkingSlotNeeded, LeasePostedDate, DurationOfLease, Comments) " +
-                    "VALUES ('" + OccupantLeaseDetails.SelectedBuildingNumber + "', '" + OccupantLeaseDetails.SelectedApartmentNumber + "', '" + OccupantLeaseDetails.SelectedApartmentLocation + "', '" + OccupantLeaseDetails.AvailableTotalParkingSlot + "', '" + OccupantLeaseDetails.OccupantName + "', '" + OccupantLeaseDetails.NIC + "', '" + OccupantLeaseDetails.Address + "',  '" + OccupantLeaseDetails.ContactNo + "', '" + OccupantLeaseDetails.ParkingSlotNeeded + "', '" + OccupantLeaseDetails.LeasePostedDate + "', '" + OccupantLeaseDetails.DurationOfLease + "', '" + OccupantLeaseDetails.OccupantComments + "')";
+                if(OccupantLeaseDetails.ApartmentStatus == "Available")
+                {
+
+                    string insertQuery = "INSERT INTO Tbl_Occupant_Lease_Details (SelectedBuildingNumber, SelectedApartmentNumber, SelectedApartmentLocation, AvailableTotalParkingSlot, SelectedApartmentStatus, Name,  NIC, Address, ContactNo, ParkingSlotNeeded, LeasePostedDate, DurationOfLease, Comments) " +
+                    "VALUES ('" + OccupantLeaseDetails.SelectedBuildingNumber + "', '" + OccupantLeaseDetails.SelectedApartmentNumber + "', '" + OccupantLeaseDetails.SelectedApartmentLocation + "', '" + OccupantLeaseDetails.AvailableTotalParkingSlot + "', '"+ OccupantLeaseDetails.ApartmentStatus +"', '" + OccupantLeaseDetails.OccupantName + "', '" + OccupantLeaseDetails.NIC + "', '" + OccupantLeaseDetails.Address + "',  '" + OccupantLeaseDetails.ContactNo + "', '" + OccupantLeaseDetails.ParkingSlotNeeded + "', '" + OccupantLeaseDetails.LeasePostedDate + "', '" + OccupantLeaseDetails.DurationOfLease + "', '" + OccupantLeaseDetails.OccupantComments + "')";
 
                     sqlConnection.Open();
 
@@ -104,17 +101,42 @@ namespace E_Apartment
                     }
 
 
-           
+
+                }
+                else
+                {
+
+                    string insertQuery2 = "INSERT INTO Tbl_Occupant_Lease_Que (SelectedBuildingNumber, SelectedApartmentNumber, SelectedApartmentLocation, AvailableTotalParkingSlot, SelectedApartmentStatus, Name,  NIC, Address, ContactNo, ParkingSlotNeeded, LeasePostedDate, DurationOfLease, Comments) " +
+                                            "VALUES ('" + OccupantLeaseDetails.SelectedBuildingNumber + "', '" + OccupantLeaseDetails.SelectedApartmentNumber + "', '" + OccupantLeaseDetails.SelectedApartmentLocation + "', '" + OccupantLeaseDetails.AvailableTotalParkingSlot + "', '" + OccupantLeaseDetails.ApartmentStatus + "', '" + OccupantLeaseDetails.OccupantName + "', '" + OccupantLeaseDetails.NIC + "', '" + OccupantLeaseDetails.Address + "',  '" + OccupantLeaseDetails.ContactNo + "', '" + OccupantLeaseDetails.ParkingSlotNeeded + "', '" + OccupantLeaseDetails.LeasePostedDate + "', '" + OccupantLeaseDetails.DurationOfLease + "', '" + OccupantLeaseDetails.OccupantComments + "')";
 
 
-        
-            }
+                    sqlConnection.Open();
+
+                    sqlCommand = new SqlCommand(insertQuery2, sqlConnection);
+
+                    int insertRecordResult2 = sqlCommand.ExecuteNonQuery();
+
+                    if(insertRecordResult2 > 0)
+                    {
+                        
+                        return true;
+
+                    } else
+                    {
+                        
+                        return false;
+
+                    }
+
+                } // End of the lease apartment available check if and else condition
+
+            } // End of the try block
             catch (Exception ex)
             {
                 MessageBox.Show("Error Occured: " + ex.Message);
                 return false;
                 
-            }
+            }// End of the catch block
             
         } // ENd of the InsertOccupantLeaseDetails method
 
@@ -145,6 +167,7 @@ namespace E_Apartment
         public string SelectedApartmentNumber { get; set; }
         public string SelectedApartmentLocation { get; set; }
         public string AvailableTotalParkingSlot { get; set; }
+        public string ApartmentStatus { get; set; }
         public string OccupantName { get; set; }
         public string NIC { get; set; }
         public string Address { get; set; }

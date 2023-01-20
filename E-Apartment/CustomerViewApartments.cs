@@ -62,6 +62,7 @@ namespace E_Apartment
             txtApartmentLocation.Text = dgwApartmentList.Rows[e.RowIndex].Cells[7].Value.ToString();
             txtTotalParkingSlot.Text = dgwApartmentList.Rows[e.RowIndex].Cells[9].Value.ToString();
             txtBuildingNumber.Text = dgwApartmentList.Rows[e.RowIndex].Cells[10].Value.ToString();
+            txtApartmentStatus.Text = dgwApartmentList.Rows[e.RowIndex].Cells[6].Value.ToString();
 
         } // End of the data grid veiw cell double click method
 
@@ -99,6 +100,7 @@ namespace E_Apartment
                         SelectedApartmentLocation = txtApartmentLocation.Text,
                         SelectedBuildingNumber = txtBuildingNumber.Text,
                         AvailableTotalParkingSlot = txtTotalParkingSlot.Text,
+                        ApartmentStatus = txtApartmentStatus.Text,
                         OccupantName = txtOccupantName.Text,
                         NIC = txtOccupantNIC.Text,
                         Address = txtOccupantAddress.Text,
@@ -114,11 +116,11 @@ namespace E_Apartment
 
                     if (insertResult)
                     {
-                        MessageBox.Show("Record Inserted");
+                        MessageBox.Show("Lease Record Inserted");
                     }
                     else
                     {
-                        MessageBox.Show("Record Not Inserted");
+                        MessageBox.Show("Lease Record Not Inserted");
                     }
 
 

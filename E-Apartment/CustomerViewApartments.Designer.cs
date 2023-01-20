@@ -63,6 +63,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnClearAllText = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
+            this.txtApartmentStatus = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgwApartmentList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,7 +150,7 @@
             // 
             this.txtApartmentLocation.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtApartmentLocation.Enabled = false;
-            this.txtApartmentLocation.Location = new System.Drawing.Point(663, 265);
+            this.txtApartmentLocation.Location = new System.Drawing.Point(547, 265);
             this.txtApartmentLocation.Multiline = true;
             this.txtApartmentLocation.Name = "txtApartmentLocation";
             this.txtApartmentLocation.Size = new System.Drawing.Size(167, 26);
@@ -157,7 +159,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(603, 268);
+            this.label9.Location = new System.Drawing.Point(487, 268);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 71;
@@ -167,16 +169,16 @@
             // 
             this.txtTotalParkingSlot.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtTotalParkingSlot.Enabled = false;
-            this.txtTotalParkingSlot.Location = new System.Drawing.Point(999, 264);
+            this.txtTotalParkingSlot.Location = new System.Drawing.Point(878, 266);
             this.txtTotalParkingSlot.Multiline = true;
             this.txtTotalParkingSlot.Name = "txtTotalParkingSlot";
-            this.txtTotalParkingSlot.Size = new System.Drawing.Size(205, 26);
+            this.txtTotalParkingSlot.Size = new System.Drawing.Size(85, 26);
             this.txtTotalParkingSlot.TabIndex = 68;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(847, 268);
+            this.label6.Location = new System.Drawing.Point(726, 270);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(146, 13);
             this.label6.TabIndex = 67;
@@ -186,16 +188,16 @@
             // 
             this.txtApartmentNumber.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtApartmentNumber.Enabled = false;
-            this.txtApartmentNumber.Location = new System.Drawing.Point(432, 265);
+            this.txtApartmentNumber.Location = new System.Drawing.Point(363, 265);
             this.txtApartmentNumber.Multiline = true;
             this.txtApartmentNumber.Name = "txtApartmentNumber";
-            this.txtApartmentNumber.Size = new System.Drawing.Size(164, 26);
+            this.txtApartmentNumber.Size = new System.Drawing.Size(115, 26);
             this.txtApartmentNumber.TabIndex = 59;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(313, 269);
+            this.label3.Location = new System.Drawing.Point(244, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 13);
             this.label3.TabIndex = 58;
@@ -208,7 +210,7 @@
             this.txtBuildingNumber.Location = new System.Drawing.Point(111, 264);
             this.txtBuildingNumber.Multiline = true;
             this.txtBuildingNumber.Name = "txtBuildingNumber";
-            this.txtBuildingNumber.Size = new System.Drawing.Size(194, 26);
+            this.txtBuildingNumber.Size = new System.Drawing.Size(126, 26);
             this.txtBuildingNumber.TabIndex = 57;
             // 
             // label2
@@ -414,12 +416,33 @@
             this.label16.TabIndex = 120;
             this.label16.Text = "Customer Details";
             // 
+            // txtApartmentStatus
+            // 
+            this.txtApartmentStatus.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtApartmentStatus.Enabled = false;
+            this.txtApartmentStatus.Location = new System.Drawing.Point(1074, 266);
+            this.txtApartmentStatus.Multiline = true;
+            this.txtApartmentStatus.Name = "txtApartmentStatus";
+            this.txtApartmentStatus.Size = new System.Drawing.Size(134, 26);
+            this.txtApartmentStatus.TabIndex = 122;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(971, 270);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(97, 13);
+            this.label15.TabIndex = 121;
+            this.label15.Text = "Apartment Status : ";
+            // 
             // CustomerViewApartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1236, 605);
+            this.Controls.Add(this.txtApartmentStatus);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.btnClearAllText);
             this.Controls.Add(this.txtComments);
@@ -501,5 +524,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnClearAllText;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtApartmentStatus;
+        private System.Windows.Forms.Label label15;
     }
 }

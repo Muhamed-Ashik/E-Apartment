@@ -295,6 +295,7 @@
             this.btnManageApartmentsToDashboard.TabIndex = 31;
             this.btnManageApartmentsToDashboard.Text = "Dashboard";
             this.btnManageApartmentsToDashboard.UseVisualStyleBackColor = false;
+            this.btnManageApartmentsToDashboard.Click += new System.EventHandler(this.btnManageApartmentsToDashboard_Click_1);
             // 
             // button2
             // 
@@ -319,7 +320,6 @@
             this.btnAdminApartmentInsert.TabIndex = 33;
             this.btnAdminApartmentInsert.Text = "Insert";
             this.btnAdminApartmentInsert.UseVisualStyleBackColor = false;
-            this.btnAdminApartmentInsert.Click += new System.EventHandler(this.btnAdminApartmentInsert_Click_1);
             // 
             // btnAdminApartmentUpdate
             // 

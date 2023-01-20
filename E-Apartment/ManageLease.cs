@@ -32,8 +32,47 @@ namespace E_Apartment
         } // End of the LoadDataToGridView method
 
         private void btnUpdateLease_Click(object sender, EventArgs e)
-        {
+        { // click Method, execute when the Update button in the Manage Lease page is clicked
 
+            // instance or object of the manageLeaseOOP page which contains only codes
+            ManageLeaseOOP manageLeaseOOP = new ManageLeaseOOP();
+
+            // creating a new Set of LeaseEntities by using the manageLeaseOOP object Lease class
+            manageLeaseOOP.Lease = new LeaseEntities()
+            {
+
+                // getting the values and storing in the manageLeaseOOP pages Lease class
+                ID = int.Parse(txtID.Text),
+                SelectedBuildingNumber = txtBuildingNumber.Text,
+                SelectedApartmentNumber = txtApartmentNumber.Text,
+                SelectedApartmentLocation = txtApartmentLocation.Text,
+                AvailableTotalParkingSlot = txtTotalParkingSlot.Text,
+                ApartmentStatus = txtApartmentStatus.Text,
+                OccupantName = txtOccupantName.Text,
+                NIC = txtOccupantNIC.Text,
+                Address = txtOccupantAddress.Text,
+                ContactNo = txtOccupantContactNo.Text,
+                ParkingSlotNeeded = txtOccupantParkingSlotNeeded.Text,
+                LeasePostedDate = txtLeasedPostedDate.Text,
+                DurationOfLease = txtDurationOfLease.Text,
+                OccupantComments = txtComments.Text
+
+            }; // End of the LeaseEntities method
+
+            // using the object creating an UpdateLeaseDetails method to update the records and getting to bool result
+            bool updateResult = manageLeaseOOP.UpdateLeaseDetails(manageLeaseOOP.Lease);
+
+            if (updateResult == true) // if the record updated
+            { // if true , execute the message
+                MessageBox.Show("Record Updated Successfully");
+            }
+            else
+            {// if false execute this message
+                MessageBox.Show("Failed to Updated Record");
+            }
+
+            LoadDataToGridView(); // load the data to the grid view
+            TextClear();
 
 
         } // End of the update button
@@ -41,6 +80,7 @@ namespace E_Apartment
         private void dgwLeaseList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            txtID.Text = dgwLeaseList.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtBuildingNumber.Text = dgwLeaseList.Rows[e.RowIndex].Cells[1].Value.ToString();
             txtApartmentNumber.Text = dgwLeaseList.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtApartmentLocation.Text = dgwLeaseList.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -57,5 +97,69 @@ namespace E_Apartment
 
         } // End of the data grid view cell double click method
 
-    } // ENd of the class
+        private void btnDeleteLease_Click(object sender, EventArgs e)
+        { // click Method, execute when the Delete button in the Manage Lease page is clicked
+
+            // instance or object of the ManageLeaseOOP page which contains only codes
+            ManageLeaseOOP manageLease = new ManageLeaseOOP();
+
+            // creating a new Set of LeaseEntities by using the manageLease object Lease class
+            manageLease.Lease = new LeaseEntities()
+            {
+
+                // geeting only the id 
+                ID = int.Parse(txtID.Text)
+
+            }; // End of the LeaseEntities Method
+
+            // using the object creating an DeleteLease method to delete the records and getting to bool result
+            bool deleteResult = manageLease.DeleteLease();
+
+            if (deleteResult == true) // if the record updated
+            {// if true , execute the message
+                MessageBox.Show("Record Deleted Successfully");
+            }
+            else
+            { //if false execute this message
+                MessageBox.Show("Failed to Deleted Record");
+            }
+
+            LoadDataToGridView();
+            TextClear();
+
+        } // End of the delete button click method
+
+        private void btnClearAllText_Click(object sender, EventArgs e)
+        {
+
+            TextClear();
+
+        } // End of the button text clear click method
+
+        public void TextClear()
+        {
+            txtBuildingNumber.Clear();
+            txtApartmentNumber.Clear();
+            txtTotalParkingSlot.Clear();
+            txtApartmentLocation.Clear();
+            txtOccupantName.Clear();
+            txtOccupantNIC.Clear();
+            txtOccupantAddress.Clear();
+            txtOccupantContactNo.Clear();
+            txtOccupantParkingSlotNeeded.Clear();
+            txtComments.Clear();
+            txtApartmentStatus.Clear();
+            txtDurationOfLease.Clear();
+            txtID.Clear();
+        }
+
+        private void btnLeaseSearch_Click(object sender, EventArgs e)
+        {
+            ManageLeaseOOP manageLeaseOOP = new ManageLeaseOOP();
+            var data = manageLeaseOOP.GetLease(txtLeaseSearch.Text);
+            dgwLeaseList.DataSource = data;
+
+        } // End of the button search click method
+
+    } // End of the class
 } // End of the namespace

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnManageEmployees = new System.Windows.Forms.Button();
             this.btnManageBuildings = new System.Windows.Forms.Button();
             this.btnAdminLogout = new System.Windows.Forms.Button();
             this.btnAdminManageReports = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnManageEmployees);
             this.panel1.Controls.Add(this.btnManageBuildings);
             this.panel1.Controls.Add(this.btnAdminLogout);
             this.panel1.Controls.Add(this.btnAdminManageReports);
@@ -72,16 +72,17 @@
             this.panel1.Size = new System.Drawing.Size(1228, 120);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // btnManageEmployees
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(523, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 41);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Manage Employees";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnManageEmployees.BackColor = System.Drawing.Color.Green;
+            this.btnManageEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnManageEmployees.Location = new System.Drawing.Point(523, 59);
+            this.btnManageEmployees.Name = "btnManageEmployees";
+            this.btnManageEmployees.Size = new System.Drawing.Size(148, 41);
+            this.btnManageEmployees.TabIndex = 11;
+            this.btnManageEmployees.Text = "Manage Employees";
+            this.btnManageEmployees.UseVisualStyleBackColor = false;
+            this.btnManageEmployees.Click += new System.EventHandler(this.btnManageEmployees_Click);
             // 
             // btnManageBuildings
             // 
@@ -341,7 +342,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblTotalApartmentsCount;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnManageEmployees;
         private System.Windows.Forms.Button btnManageBuildings;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;

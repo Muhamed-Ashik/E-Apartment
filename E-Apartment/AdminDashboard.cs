@@ -68,5 +68,14 @@ namespace E_Apartment
 
         } // End of the manage lease button
 
+        private void btnManageEmployees_Click(object sender, EventArgs e)
+        {
+
+            ManageEmployees manageEmployees = new ManageEmployees();
+            this.Hide();
+            manageEmployees.Show();
+
+        } // End of the Manage EMployees button
+
     } // End of the AdminDashboard
 } // End of E_Apartment namespace

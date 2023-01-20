@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnManageBuildings = new System.Windows.Forms.Button();
             this.btnAdminLogout = new System.Windows.Forms.Button();
             this.btnAdminManageReports = new System.Windows.Forms.Button();
             this.btnAdminManageLease = new System.Windows.Forms.Button();
@@ -43,8 +45,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTotalApartmentsCount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnManageBuildings);
             this.panel1.Controls.Add(this.btnAdminLogout);
             this.panel1.Controls.Add(this.btnAdminManageReports);
             this.panel1.Controls.Add(this.btnAdminManageLease);
@@ -71,6 +71,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1228, 120);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.Location = new System.Drawing.Point(523, 59);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 41);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Manage Employees";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnManageBuildings
+            // 
+            this.btnManageBuildings.BackColor = System.Drawing.Color.Green;
+            this.btnManageBuildings.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnManageBuildings.Location = new System.Drawing.Point(464, 12);
+            this.btnManageBuildings.Name = "btnManageBuildings";
+            this.btnManageBuildings.Size = new System.Drawing.Size(144, 41);
+            this.btnManageBuildings.TabIndex = 10;
+            this.btnManageBuildings.Text = "Manage Building";
+            this.btnManageBuildings.UseVisualStyleBackColor = false;
+            this.btnManageBuildings.Click += new System.EventHandler(this.btnManageBuildings_Click);
             // 
             // btnAdminLogout
             // 
@@ -227,28 +250,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Total Apartments  : ";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(523, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 41);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Manage Employees";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Green;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(464, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 41);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Manage Building";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -340,7 +341,7 @@
         private System.Windows.Forms.Label lblTotalApartmentsCount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnManageBuildings;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;

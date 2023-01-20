@@ -50,5 +50,14 @@ namespace E_Apartment
 
         } // End of the Manage Apartment Button
 
+        private void btnManageBuildings_Click(object sender, EventArgs e)
+        {
+
+            ManageBuildings manageBuildings = new ManageBuildings();
+            this.Show();
+            manageBuildings.Show();
+
+        } // End of the manage building button click
+
     } // End of the AdminDashboard
 } // End of E_Apartment namespace

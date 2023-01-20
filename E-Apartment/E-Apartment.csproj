@@ -93,6 +93,13 @@
     <Compile Include="AdminManageCustomers.Designer.cs">
       <DependentUpon>AdminManageCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageBuildings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBuildings.Designer.cs">
+      <DependentUpon>ManageBuildings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBuildingsOOP.cs" />
     <Compile Include="ManageLease.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminManageCustomers.resx">
       <DependentUpon>AdminManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBuildings.resx">
+      <DependentUpon>ManageBuildings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageLease.resx">
       <DependentUpon>ManageLease.cs</DependentUpon>

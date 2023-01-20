@@ -57,7 +57,7 @@ namespace E_Apartment
 
         } // End of the Admin Logout button
 
-        private void btnApartmentTextClear_Click(object sender, EventArgs e)
+        private void btnApartmentTextClear_Click_1(object sender, EventArgs e)
         { // Method, execute when the clear all text button clicked in in the Manage Apartment Page
 
             // Clear all the fields text
@@ -74,7 +74,7 @@ namespace E_Apartment
 
         } // End of the Text Clear Button
 
-        private void btnAdminApartmentInsert_Click(object sender, EventArgs e)
+        private void btnAdminApartmentInsert_Click_1(object sender, EventArgs e)
         { // click Method, execute when insert button clicked in the Manage Apartment Page
 
             // check the fields are empty
@@ -287,5 +287,6 @@ namespace E_Apartment
 
         } // End of the Dashboard button click method
 
+        
     } // End of the ManageApartment Class
 } // End of the namespace E_Apartment

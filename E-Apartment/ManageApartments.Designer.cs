@@ -314,48 +314,52 @@
             this.btnAdminApartmentInsert.BackColor = System.Drawing.Color.Green;
             this.btnAdminApartmentInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdminApartmentInsert.ForeColor = System.Drawing.Color.White;
-            this.btnAdminApartmentInsert.Location = new System.Drawing.Point(1046, 80);
+            this.btnAdminApartmentInsert.Location = new System.Drawing.Point(1046, 95);
             this.btnAdminApartmentInsert.Name = "btnAdminApartmentInsert";
             this.btnAdminApartmentInsert.Size = new System.Drawing.Size(139, 41);
             this.btnAdminApartmentInsert.TabIndex = 33;
             this.btnAdminApartmentInsert.Text = "Insert";
             this.btnAdminApartmentInsert.UseVisualStyleBackColor = false;
+            this.btnAdminApartmentInsert.Click += new System.EventHandler(this.btnAdminApartmentInsert_Click_1);
             // 
             // btnAdminApartmentUpdate
             // 
             this.btnAdminApartmentUpdate.BackColor = System.Drawing.Color.Green;
             this.btnAdminApartmentUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdminApartmentUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnAdminApartmentUpdate.Location = new System.Drawing.Point(1046, 144);
+            this.btnAdminApartmentUpdate.Location = new System.Drawing.Point(1046, 159);
             this.btnAdminApartmentUpdate.Name = "btnAdminApartmentUpdate";
             this.btnAdminApartmentUpdate.Size = new System.Drawing.Size(139, 41);
             this.btnAdminApartmentUpdate.TabIndex = 34;
             this.btnAdminApartmentUpdate.Text = "Update";
             this.btnAdminApartmentUpdate.UseVisualStyleBackColor = false;
+            this.btnAdminApartmentUpdate.Click += new System.EventHandler(this.btnAdminApartmentUpdate_Click);
             // 
             // btnAdminApartmentDelete
             // 
             this.btnAdminApartmentDelete.BackColor = System.Drawing.Color.Red;
             this.btnAdminApartmentDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAdminApartmentDelete.ForeColor = System.Drawing.Color.White;
-            this.btnAdminApartmentDelete.Location = new System.Drawing.Point(1046, 208);
+            this.btnAdminApartmentDelete.Location = new System.Drawing.Point(1046, 223);
             this.btnAdminApartmentDelete.Name = "btnAdminApartmentDelete";
             this.btnAdminApartmentDelete.Size = new System.Drawing.Size(139, 41);
             this.btnAdminApartmentDelete.TabIndex = 35;
             this.btnAdminApartmentDelete.Text = "Delete";
             this.btnAdminApartmentDelete.UseVisualStyleBackColor = false;
+            this.btnAdminApartmentDelete.Click += new System.EventHandler(this.btnAdminApartmentDelete_Click);
             // 
             // btnApartmentTextClear
             // 
             this.btnApartmentTextClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnApartmentTextClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnApartmentTextClear.ForeColor = System.Drawing.Color.White;
-            this.btnApartmentTextClear.Location = new System.Drawing.Point(1046, 277);
+            this.btnApartmentTextClear.Location = new System.Drawing.Point(1046, 292);
             this.btnApartmentTextClear.Name = "btnApartmentTextClear";
             this.btnApartmentTextClear.Size = new System.Drawing.Size(139, 41);
             this.btnApartmentTextClear.TabIndex = 36;
             this.btnApartmentTextClear.Text = "Clear All Text";
             this.btnApartmentTextClear.UseVisualStyleBackColor = false;
+            this.btnApartmentTextClear.Click += new System.EventHandler(this.btnApartmentTextClear_Click_1);
             // 
             // btnApartmentSearch
             // 
@@ -366,8 +370,9 @@
             this.btnApartmentSearch.Name = "btnApartmentSearch";
             this.btnApartmentSearch.Size = new System.Drawing.Size(139, 41);
             this.btnApartmentSearch.TabIndex = 37;
-            this.btnApartmentSearch.Text = "Clear All Text";
+            this.btnApartmentSearch.Text = "Search";
             this.btnApartmentSearch.UseVisualStyleBackColor = false;
+            this.btnApartmentSearch.Click += new System.EventHandler(this.btnApartmentSearch_Click);
             // 
             // ManageApartments
             // 

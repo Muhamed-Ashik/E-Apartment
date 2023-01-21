@@ -21,10 +21,11 @@ namespace E_Apartment
             InitializeComponent();
         }
 
-        public string Name;
         public string Username;
         public string Password;
         public string UserType;
+        public string AdminUserType = "Admin";
+        public string EmployeeUserType = "Employee";
 
         // Method which runs once the admin login page login button clicked
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -36,7 +37,7 @@ namespace E_Apartment
             {
 
                 // show an error message
-                MessageBox.Show("Please Enter the Correct Username and Password!");
+                MessageBox.Show("Please Fill the Details");
 
             }
             else
@@ -79,39 +80,25 @@ namespace E_Apartment
                 } // End of the for loop
 
                 // checking the user entered username and password are matching with the database fetched username and password
-                //if (txtAdminUsername.Text == Username && txtAdminPassword.Text == Password)
-                    if (txtAdminUsername.Text == Username && txtAdminPassword.Text == Password && UserType == "Employee")
+                    if (txtAdminUsername.Text == Username && txtAdminPassword.Text == Password && UserType == AdminUserType)
                     {// if the both are matched
 
-                    // MessageBox.Show("Welcome " + Name); // show a message
+                        AdminDashboard adminDashboard = new AdminDashboard();
+                        this.Hide();
+                        adminDashboard.Show();
 
-                    // creating a admin dashboard class object
-                    // AdminDashboard adminDashboard = new AdminDashboard();
+
+                    }
+
+                     else
+                     {
+
                     EmployeeDashboard employeeDashboard = new EmployeeDashboard();
-
-                    // hiding the current open admin login page
                     this.Hide();
-
-                    // showing the admin dashboard
-                    // adminDashboard.Show();
                     employeeDashboard.Show();
 
-                } else if(txtAdminUsername.Text == Username && txtAdminPassword.Text == Password && UserType == "Admin")
-                {
-                    AdminDashboard adminDashboard = new AdminDashboard();
-                    this.Hide();
-                    adminDashboard.Show();
-                }
-                else
-                { // if both are not matched
-
-                    // show this message
-                    MessageBox.Show("Please Enter the Correct Username or Password!");
-
-                } // End of the username and password match check if condition
-
-
-
+                     }
+                    
             } // End of the fields empty check if condition
 
 

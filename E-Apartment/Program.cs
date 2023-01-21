@@ -16,7 +16,7 @@ namespace E_Apartment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminLogin());
+            Application.Run(new CustomerLogin());
         }
     }
 }

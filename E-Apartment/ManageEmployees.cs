@@ -194,7 +194,7 @@ namespace E_Apartment
             txtID.Text = dgwUserList.Rows[e.RowIndex].Cells[0].Value.ToString();
             txtUsername.Text = dgwUserList.Rows[e.RowIndex].Cells[1].Value.ToString();
             cmbxUserType.Text = dgwUserList.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtPassword.Text = dgwUserList.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtPassword.Text = dgwUserList.Rows[e.RowIndex].Cells[3].Value.ToString();
 
         } // End of the cell double click method
 

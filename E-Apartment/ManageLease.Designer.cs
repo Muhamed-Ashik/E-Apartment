@@ -67,6 +67,7 @@
             this.btnDeleteLease = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnGenerateLeaseReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwLeaseList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -454,11 +455,25 @@
             this.label17.TabIndex = 162;
             this.label17.Text = "Record ID : ";
             // 
+            // btnGenerateLeaseReport
+            // 
+            this.btnGenerateLeaseReport.BackColor = System.Drawing.Color.Green;
+            this.btnGenerateLeaseReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnGenerateLeaseReport.ForeColor = System.Drawing.Color.White;
+            this.btnGenerateLeaseReport.Location = new System.Drawing.Point(594, 29);
+            this.btnGenerateLeaseReport.Name = "btnGenerateLeaseReport";
+            this.btnGenerateLeaseReport.Size = new System.Drawing.Size(286, 36);
+            this.btnGenerateLeaseReport.TabIndex = 164;
+            this.btnGenerateLeaseReport.Text = "Generate Lease Report";
+            this.btnGenerateLeaseReport.UseVisualStyleBackColor = false;
+            this.btnGenerateLeaseReport.Click += new System.EventHandler(this.btnGenerateLeaseReport_Click);
+            // 
             // ManageLease
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 637);
+            this.ClientSize = new System.Drawing.Size(1232, 640);
+            this.Controls.Add(this.btnGenerateLeaseReport);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.btnDeleteLease);
@@ -549,5 +564,6 @@
         private System.Windows.Forms.Button btnDeleteLease;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnGenerateLeaseReport;
     }
 }

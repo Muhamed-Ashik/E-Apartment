@@ -161,5 +161,14 @@ namespace E_Apartment
 
         } // End of the button search click method
 
+        private void btnGenerateLeaseReport_Click(object sender, EventArgs e)
+        {
+
+            ManageLeaseReport manageLeaseReport = new ManageLeaseReport();
+            this.Hide();
+            manageLeaseReport.Show();
+
+        } // End of the generate lease report button
+
     } // End of the class
 } // End of the namespace

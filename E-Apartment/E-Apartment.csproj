@@ -98,6 +98,24 @@
     <Compile Include="CustomerSignUpOOP.cs" />
     <Compile Include="CustomerViewApartmentsOOP.cs" />
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="EmployeeDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeDashboard.Designer.cs">
+      <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeViewApartments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeViewApartments.Designer.cs">
+      <DependentUpon>EmployeeViewApartments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeViewLease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeViewLease.Designer.cs">
+      <DependentUpon>EmployeeViewLease.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageApartments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +190,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerSignUp.resx">
       <DependentUpon>CustomerSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeDashboard.resx">
+      <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeViewApartments.resx">
+      <DependentUpon>EmployeeViewApartments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeViewLease.resx">
+      <DependentUpon>EmployeeViewLease.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageApartments.resx">
       <DependentUpon>ManageApartments.cs</DependentUpon>

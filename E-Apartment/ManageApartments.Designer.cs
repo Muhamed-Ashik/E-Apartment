@@ -309,6 +309,7 @@
             this.button2.TabIndex = 32;
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAdminApartmentInsert
             // 
@@ -385,7 +386,7 @@
             this.btnGenerateApartmentReport.Size = new System.Drawing.Size(270, 41);
             this.btnGenerateApartmentReport.TabIndex = 38;
             this.btnGenerateApartmentReport.Text = "Generate Apartment Report";
-            this.btnGenerateApartmentReport.UseVisualStyleBackColor = false;          
+            this.btnGenerateApartmentReport.UseVisualStyleBackColor = false;
             // 
             // ManageApartments
             // 

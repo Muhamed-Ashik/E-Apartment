@@ -79,6 +79,7 @@
             this.btnCustomerLogout.TabIndex = 3;
             this.btnCustomerLogout.Text = "Logout";
             this.btnCustomerLogout.UseVisualStyleBackColor = false;
+            this.btnCustomerLogout.Click += new System.EventHandler(this.btnCustomerLogout_Click);
             // 
             // label13
             // 

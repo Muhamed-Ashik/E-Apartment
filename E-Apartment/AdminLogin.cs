@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,7 @@ namespace E_Apartment
         public string Name;
         public string Username;
         public string Password;
+        public string UserType;
 
         // Method which runs once the admin login page login button clicked
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -46,7 +48,8 @@ namespace E_Apartment
                 DataTable dataTable; // creating a data table class assinging a variable ??????
 
                 // query to fetch the record from the admin login table
-                string fetchQuery = "SELECT * FROM Tbl_Admin_Login";
+                // string fetchQuery = "SELECT * FROM Tbl_Admin_Login";
+                string fetchQuery = "SELECT * FROM Tbl_Authorized_Login_Details";
 
                 // ?????
                 sqlDataAdapter = new SqlDataAdapter(fetchQuery, sqlConnection);
@@ -64,9 +67,11 @@ namespace E_Apartment
                     var data = dataTable.Rows[i].ItemArray;
 
                     // accessing the data in the data table row 1 and converting it to a string and storing in the Name Variable????
-                    Name = data[1].ToString();
+                    // Name = data[1].ToString();
                     // accessing the data in the data table row 2 and converting in to a string and stroing in the Username Variable ???? 
-                    Username = data[2].ToString();
+                    Username = data[1].ToString();
+
+                    UserType = data[2].ToString();
                     // accessing the data in the data table row 3 and converting in to a string and stroing in the Password Variable ???? 
                     Password = data[3].ToString();
 
@@ -74,20 +79,28 @@ namespace E_Apartment
                 } // End of the for loop
 
                 // checking the user entered username and password are matching with the database fetched username and password
-                if (txtAdminUsername.Text == Username && txtAdminPassword.Text == Password)
-                {// if the both are matched
+                //if (txtAdminUsername.Text == Username && txtAdminPassword.Text == Password)
+                    if (txtAdminUsername.Text == Username && txtAdminPassword.Text == Password && UserType == "Employee")
+                    {// if the both are matched
 
-                    MessageBox.Show("Welcome " + Name); // show a message
+                    // MessageBox.Show("Welcome " + Name); // show a message
 
                     // creating a admin dashboard class object
-                    AdminDashboard adminDashboard = new AdminDashboard();
+                    // AdminDashboard adminDashboard = new AdminDashboard();
+                    EmployeeDashboard employeeDashboard = new EmployeeDashboard();
 
                     // hiding the current open admin login page
                     this.Hide();
 
                     // showing the admin dashboard
-                    adminDashboard.Show();
+                    // adminDashboard.Show();
+                    employeeDashboard.Show();
 
+                } else if(txtAdminUsername.Text == Username && txtAdminPassword.Text == Password && UserType == "Admin")
+                {
+                    AdminDashboard adminDashboard = new AdminDashboard();
+                    this.Hide();
+                    adminDashboard.Show();
                 }
                 else
                 { // if both are not matched

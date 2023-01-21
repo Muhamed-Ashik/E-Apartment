@@ -397,6 +397,7 @@
             this.btnCustomerLogout.TabIndex = 124;
             this.btnCustomerLogout.Text = "Logout";
             this.btnCustomerLogout.UseVisualStyleBackColor = false;
+            this.btnCustomerLogout.Click += new System.EventHandler(this.btnCustomerLogout_Click);
             // 
             // btnCustomerViewDashboard
             // 
@@ -409,6 +410,7 @@
             this.btnCustomerViewDashboard.TabIndex = 123;
             this.btnCustomerViewDashboard.Text = "View Dashboard";
             this.btnCustomerViewDashboard.UseVisualStyleBackColor = false;
+            this.btnCustomerViewDashboard.Click += new System.EventHandler(this.btnCustomerViewDashboard_Click);
             // 
             // btnUpdateLease
             // 
@@ -472,6 +474,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1232, 640);
             this.Controls.Add(this.btnGenerateLeaseReport);
             this.Controls.Add(this.txtID);

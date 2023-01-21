@@ -143,6 +143,11 @@ namespace E_Apartment
 
         } // End of the button Clear ALl Text
 
-        
+        private void btnCustomerLogout_Click(object sender, EventArgs e)
+        {
+            CustomerLogin customerLogin = new CustomerLogin();
+            this.Hide();
+            customerLogin.Show();
+        }
     } // End of the Customer View Apartments class
 } // End of the namespace

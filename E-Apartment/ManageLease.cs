@@ -170,5 +170,18 @@ namespace E_Apartment
 
         } // End of the generate lease report button
 
+        private void btnCustomerViewDashboard_Click(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            this.Hide();
+            adminDashboard.Show();
+        }
+
+        private void btnCustomerLogout_Click(object sender, EventArgs e)
+        {
+            AdminLogin adminLogin = new AdminLogin();
+            this.Hide();
+            adminLogin.Show();
+        }
     } // End of the class
 } // End of the namespace

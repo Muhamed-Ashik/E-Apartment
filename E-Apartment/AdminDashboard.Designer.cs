@@ -34,7 +34,6 @@
             this.btnAdminLogout = new System.Windows.Forms.Button();
             this.btnAdminManageReports = new System.Windows.Forms.Button();
             this.btnAdminManageLease = new System.Windows.Forms.Button();
-            this.btnAdminManageCustomer = new System.Windows.Forms.Button();
             this.btnAdminManageApartments = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTotalLeaseApprovedCount = new System.Windows.Forms.Label();
@@ -65,7 +64,6 @@
             this.panel1.Controls.Add(this.btnAdminLogout);
             this.panel1.Controls.Add(this.btnAdminManageReports);
             this.panel1.Controls.Add(this.btnAdminManageLease);
-            this.panel1.Controls.Add(this.btnAdminManageCustomer);
             this.panel1.Controls.Add(this.btnAdminManageApartments);
             this.panel1.Location = new System.Drawing.Point(4, 83);
             this.panel1.Name = "panel1";
@@ -118,6 +116,7 @@
             this.btnAdminManageReports.TabIndex = 6;
             this.btnAdminManageReports.Text = "Manage Reports";
             this.btnAdminManageReports.UseVisualStyleBackColor = false;
+            this.btnAdminManageReports.Click += new System.EventHandler(this.btnAdminManageReports_Click);
             // 
             // btnAdminManageLease
             // 
@@ -131,17 +130,6 @@
             this.btnAdminManageLease.Text = "Manage Lease";
             this.btnAdminManageLease.UseVisualStyleBackColor = false;
             this.btnAdminManageLease.Click += new System.EventHandler(this.btnAdminManageLease_Click);
-            // 
-            // btnAdminManageCustomer
-            // 
-            this.btnAdminManageCustomer.BackColor = System.Drawing.Color.Green;
-            this.btnAdminManageCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdminManageCustomer.Location = new System.Drawing.Point(242, 12);
-            this.btnAdminManageCustomer.Name = "btnAdminManageCustomer";
-            this.btnAdminManageCustomer.Size = new System.Drawing.Size(144, 41);
-            this.btnAdminManageCustomer.TabIndex = 2;
-            this.btnAdminManageCustomer.Text = "Manage Customers";
-            this.btnAdminManageCustomer.UseVisualStyleBackColor = false;
             // 
             // btnAdminManageApartments
             // 
@@ -329,7 +317,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAdminManageApartments;
-        private System.Windows.Forms.Button btnAdminManageCustomer;
         private System.Windows.Forms.Button btnAdminManageReports;
         private System.Windows.Forms.Button btnAdminManageLease;
         private System.Windows.Forms.Button btnAdminLogout;

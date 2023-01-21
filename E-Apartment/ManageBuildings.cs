@@ -191,5 +191,11 @@ namespace E_Apartment
 
         } // End of the dashboard click method
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            AdminLogin adminLogin = new AdminLogin();
+            this.Hide();
+            adminLogin.Show();
+        }
     } // End of the ManageBuildings Class
 } // End of the namespace

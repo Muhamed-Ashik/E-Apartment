@@ -26,5 +26,11 @@ namespace E_Apartment
 
         } // End of the Customer View Apartment button
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CustomerLogin customerLogin = new CustomerLogin();
+            this.Hide();
+            customerLogin.Show();
+        }
     } // End of the customer dashboard class
 } // End of the namespace

@@ -287,5 +287,11 @@ namespace E_Apartment
 
         } // End of the Dashboard button click method
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdminLogin adminLogin = new AdminLogin();
+            this.Hide();
+            adminLogin.Show();
+        }
     } // End of the ManageApartment Class
 } // End of the namespace E_Apartment

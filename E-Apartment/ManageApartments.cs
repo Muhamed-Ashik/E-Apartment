@@ -287,6 +287,5 @@ namespace E_Apartment
 
         } // End of the Dashboard button click method
 
-        
     } // End of the ManageApartment Class
 } // End of the namespace E_Apartment

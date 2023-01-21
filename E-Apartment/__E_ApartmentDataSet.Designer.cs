@@ -1893,10 +1893,7 @@ SELECT ID, SelectedBuildingNumber, SelectedApartmentNumber, SelectedApartmentLoc
             global::System.Collections.Generic.Dictionary<object, global::System.Data.IDbConnection> revertConnections = new global::System.Collections.Generic.Dictionary<object, global::System.Data.IDbConnection>();
             int result = 0;
             global::System.Data.DataSet backupDataSet = null;
-            if (this.BackupDataSetBeforeUpdate) {
-                backupDataSet = new global::System.Data.DataSet();
-                backupDataSet.Merge(dataSet);
-            }
+            
             try {
                 // ---- Prepare for update -----------
                 //

@@ -58,6 +58,7 @@
             this.btnAdminApartmentDelete = new System.Windows.Forms.Button();
             this.btnApartmentTextClear = new System.Windows.Forms.Button();
             this.btnApartmentSearch = new System.Windows.Forms.Button();
+            this.btnGenerateApartmentReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwApartmentList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -374,12 +375,25 @@
             this.btnApartmentSearch.UseVisualStyleBackColor = false;
             this.btnApartmentSearch.Click += new System.EventHandler(this.btnApartmentSearch_Click);
             // 
+            // btnGenerateApartmentReport
+            // 
+            this.btnGenerateApartmentReport.BackColor = System.Drawing.Color.Green;
+            this.btnGenerateApartmentReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnGenerateApartmentReport.ForeColor = System.Drawing.Color.White;
+            this.btnGenerateApartmentReport.Location = new System.Drawing.Point(670, 12);
+            this.btnGenerateApartmentReport.Name = "btnGenerateApartmentReport";
+            this.btnGenerateApartmentReport.Size = new System.Drawing.Size(270, 41);
+            this.btnGenerateApartmentReport.TabIndex = 38;
+            this.btnGenerateApartmentReport.Text = "Generate Apartment Report";
+            this.btnGenerateApartmentReport.UseVisualStyleBackColor = false;          
+            // 
             // ManageApartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1245, 637);
+            this.Controls.Add(this.btnGenerateApartmentReport);
             this.Controls.Add(this.btnApartmentSearch);
             this.Controls.Add(this.btnApartmentTextClear);
             this.Controls.Add(this.btnAdminApartmentDelete);
@@ -452,5 +466,6 @@
         private System.Windows.Forms.Button btnAdminApartmentDelete;
         private System.Windows.Forms.Button btnApartmentTextClear;
         private System.Windows.Forms.Button btnApartmentSearch;
+        private System.Windows.Forms.Button btnGenerateApartmentReport;
     }
 }
